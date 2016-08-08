@@ -1,6 +1,6 @@
 <?php
 /*
-*Перевірка доступу
+*Перевірка доступу до сайту
 */
 	require_once 'application/core/protection.php';
 	Protection::start();
