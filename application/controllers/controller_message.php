@@ -16,8 +16,8 @@ class Controller_message extends Controller
 		}
 
 		$data = $this->model->get_data_dialog();
-		$dataOne = $this->model->get_data_dialog_out();
-		$this->view->generate('message_view.php', 'template_view.php', $data, $dataOne);
+		//$dataOne = $this->model->get_data_dialog_out();
+		$this->view->generate('message_view.php', 'template_view.php', $data);
 
 	}
 

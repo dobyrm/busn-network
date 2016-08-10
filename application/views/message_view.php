@@ -66,28 +66,14 @@
                 { 
               ?>
               <!-- Message. Default to the left -->
-              <div class="direct-chat-msg">
+              <?php if($_SESSION['auchUsersSetings']['id'] == $row['id_user_a']) { 
+              echo '<div class="direct-chat-msg">';
+               } else { 
+               echo '<div class="direct-chat-msg right">';
+               } ?>
                 <div class="direct-chat-info clearfix">
                   <span class="direct-chat-name pull-left"><?=$row['name'];?></span>
                   <span class="direct-chat-timestamp pull-right"><?=$row['data'];?></span>
-                </div><!-- /.direct-chat-info -->
-                <img class="direct-chat-img" src="image/users/ava/<?=$row['ava'];?>" alt="<?=$row['name'];?>"><!-- /.direct-chat-img -->
-                <div class="direct-chat-text">
-                  <?=$row['text'];?>
-                </div><!-- /.direct-chat-text -->
-              </div><!-- /.direct-chat-msg -->
-              <?php 
-                } 
-              ?>
-              <?php
-                foreach($dataOne as $row)
-                { 
-              ?>
-              <!-- Message to the right -->
-              <div class="direct-chat-msg right">
-                <div class="direct-chat-info clearfix">
-                  <span class="direct-chat-name pull-right"><?=$row['name'];?></span>
-                  <span class="direct-chat-timestamp pull-left"><?=$row['data'];?></span>
                 </div><!-- /.direct-chat-info -->
                 <img class="direct-chat-img" src="image/users/ava/<?=$row['ava'];?>" alt="<?=$row['name'];?>"><!-- /.direct-chat-img -->
                 <div class="direct-chat-text">
