@@ -6,7 +6,7 @@
               <!-- Profile Image -->
               <div class="box box-primary">
                 <div class="box-body box-profile">
-                  <img class="profile-user-img img-responsive img-circle" src="image/users/ava/<?=$_SESSION['auchUsersSetings']['ava'];?>" alt="<?=$_SESSION['auchUsersSetings']['name'];?>">
+                  <img class="profile-user-img img-responsive img-circle" src="assets/image/users/ava/<?=$_SESSION['auchUsersSetings']['ava'];?>" alt="<?=$_SESSION['auchUsersSetings']['name'];?>">
                   <h3 class="profile-username text-center"><?=$_SESSION['auchUsersSetings']['name'];?></h3>
                   <p class="text-muted text-center"><?=$_SESSION['auchUsersSetings']['posada'];?></p>
 
@@ -51,7 +51,8 @@
           <div class="box-header with-border">
             <h3 class="box-title">Чат</h3>
             <div class="box-tools pull-right">
-              <a href="/">Моя сторінка </a>
+              <a href="<?=$_SERVER['HTTP_REFERER'];?>"><i class="fa fa-history" aria-hidden="true"></i>&nbsp;&nbsp;</a>
+              <a href="/"><i class="fa fa-home" aria-hidden="true"></i></a>
               <!--<span data-toggle="tooltip" title="3 Нові повідомлення" class="badge bg-light-blue">3</span>
               <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
               <button class="btn btn-box-tool" data-toggle="tooltip" title="Contacts" data-widget="chat-pane-toggle"><i class="fa fa-comments"></i></button>
@@ -75,7 +76,7 @@
                   <span class="direct-chat-name pull-left"><?=$row['name'];?></span>
                   <span class="direct-chat-timestamp pull-right"><?=$row['data'];?></span>
                 </div><!-- /.direct-chat-info -->
-                <img class="direct-chat-img" src="image/users/ava/<?=$row['ava'];?>" alt="<?=$row['name'];?>"><!-- /.direct-chat-img -->
+                <img class="direct-chat-img" src="assets/image/users/ava/<?=$row['ava'];?>" alt="<?=$row['name'];?>"><!-- /.direct-chat-img -->
                 <div class="direct-chat-text">
                   <?=$row['text'];?>
                 </div><!-- /.direct-chat-text -->
@@ -85,7 +86,7 @@
               ?>
             </div><!--/.direct-chat-messages-->
           </div><!-- /.box-body -->
-          <div class="box-footer">
+          <div class="box-footer" id="bottomMess">
             <form action="" method="post">
               <div class="input-group">
                 <input type="text" name="message" placeholder="Повідомлення..." class="form-control">

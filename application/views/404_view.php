@@ -5,7 +5,7 @@
 		margin: 0;
 		padding: 0;
 		height: 500px;
-		background: url('/dist/img/404.png') no-repeat;
+		background: url('assets/tmp/dist/img/404.png') no-repeat;
 		background-position: top center;
 	}
 </style>

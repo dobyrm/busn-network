@@ -4,7 +4,7 @@
     <!-- Profile Image -->
     <div class="box box-primary">
       <div class="box-body box-profile">
-        <img class="profile-user-img img-responsive img-circle" src="image/users/ava/<?=$_SESSION['auchUsersSetings']['ava'];?>" alt="<?=$_SESSION['auchUsersSetings']['name'];?>">
+        <img class="profile-user-img img-responsive img-circle" src="assets/image/users/ava/<?=$_SESSION['auchUsersSetings']['ava'];?>" alt="<?=$_SESSION['auchUsersSetings']['name'];?>">
         <h3 class="profile-username text-center"><?=$_SESSION['auchUsersSetings']['name'];?></h3>
         <p class="text-muted text-center"><?=$_SESSION['auchUsersSetings']['posada'];?></p>
 
@@ -50,7 +50,7 @@
         <li class="active"><a href="im">Повідомлення</a></li>
         <li><a href="friends">Користувачі</a></li>
         <li><a href="settings">Налаштування</a></li>
-        <li class="pull-right"><a href="?exit">Вихід</a></li>
+        <li class="pull-right"><a href="?exit"><i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
       </ul>
       <div class="tab-content">
         <div class="active tab-pane" id="message">
@@ -63,13 +63,13 @@
             ?>
                 <tr>
                   <td class="mailbox-star"><a><i class="fa fa-star text-yellow"></i></a></td>
-                  <td class="mailbox-name"><a href="message?id=<?=$row['id'];?>"><?=$row['name'];?></a></td>
+                  <td class="mailbox-name"><a href="dialog?id=<?=$row['id'];?>"><?=$row['name'];?></a></td>
                   <td class="mailbox-subject"><?=substr($row['text'],0,100);?></td>
                   <td class="mailbox-attachment"></td>
                   <td class="mailbox-date"><?=$row['data'];?></td>
                   <td class="mailbox-date">
                     <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
-                    <input type="hidden" name="messageID" value="<?=$row['id_mess'];?>">
+                    <input type="hidden" name="dialogID" value="<?=$row['id_dialog'];?>">
                     <button type="submit" name="deleteMessage" value="deleteMessage" class="btn btn-primary" style="    padding:0px 5px!important;"><i class='fa fa-times'></i></button>
                     </form>
                   </td>

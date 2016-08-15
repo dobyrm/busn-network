@@ -4,7 +4,7 @@
     <!-- Profile Image -->
     <div class="box box-primary">
       <div class="box-body box-profile">
-        <img class="profile-user-img img-responsive img-circle" src="image/users/ava/<?=$_SESSION['auchUsersSetings']['ava'];?>" alt="<?=$_SESSION['auchUsersSetings']['name'];?>">
+        <img class="profile-user-img img-responsive img-circle" src="assets/image/users/ava/<?=$_SESSION['auchUsersSetings']['ava'];?>" alt="<?=$_SESSION['auchUsersSetings']['name'];?>">
         <h3 class="profile-username text-center"><?=$_SESSION['auchUsersSetings']['name'];?></h3>
         <p class="text-muted text-center"><?=$_SESSION['auchUsersSetings']['posada'];?></p>
 
@@ -50,7 +50,7 @@
         <li><a href="im">Повідомлення</a></li>
         <li><a href="friends">Користувачі</a></li>
         <li><a href="settings">Налаштування</a></li>
-        <li class="pull-right"><a href="?exit">Вихід</a></li>
+        <li class="pull-right"><a href="?exit"><i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
       </ul>
       <div class="tab-content">
         <div class="active tab-pane" id="timeline">

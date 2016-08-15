@@ -12,7 +12,7 @@ class Controller_Im extends Controller
 	{
 
 		if($_POST['deleteMessage'])
-			$info = $this->model->get_data_delete_message($_POST['messageID']);
+			$info = $this->model->get_data_delete_message($_POST['dialogID']);
 
 		$data = $this->model->get_data_message();
 

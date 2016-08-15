@@ -1,10 +1,10 @@
 <?php
-class Controller_message extends Controller
+class Controller_dialog extends Controller
 {
 
 	function __construct()
 	{
-		$this->model = new Model_message();
+		$this->model = new Model_dialog();
 		$this->view = new View();
 	}
 
@@ -16,8 +16,7 @@ class Controller_message extends Controller
 		}
 
 		$data = $this->model->get_data_dialog();
-		//$dataOne = $this->model->get_data_dialog_out();
-		$this->view->generate('message_view.php', 'template_view.php', $data);
+		$this->view->generate('dialog_view.php', 'template_view.php', $data);
 
 	}
 
