@@ -64,7 +64,7 @@
             <div class="form-group">
               <label for="inputName" class="col-sm-2 control-label">Аватарка</label>
               <div class="col-sm-10">
-                <input name="file" type="file" /><br />
+                <input name="fileAva" type="file" /><br />
               </div>
             </div>
             <div class="form-group">

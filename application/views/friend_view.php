@@ -14,7 +14,7 @@
         <p class="text-muted text-center"><?=$row['posada'];?></p>
 
         <!--<a href="#" class="btn btn-primary btn-block"><b>Підписатись</b></a>-->
-        <a href="dialog?id=<?=$row['id'];?>" class="btn btn-success btn-block"><b>Повідомлення</b></a>
+        <a href="dialog?id=<?=$row['id'];?>#bms" class="btn btn-success btn-block"><b>Повідомлення</b></a>
       </div><!-- /.box-body -->
     </div><!-- /.box -->
 
