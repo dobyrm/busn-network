@@ -84,9 +84,10 @@
               <?php 
                 } 
               ?>
+              <div id="bms"></div>
             </div><!--/.direct-chat-messages-->
           </div><!-- /.box-body -->
-          <div class="box-footer" id="bottomMess">
+          <div class="box-footer">
             <form action="" method="post">
               <div class="input-group">
                 <input type="text" name="message" placeholder="Повідомлення..." class="form-control">

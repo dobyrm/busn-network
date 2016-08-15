@@ -60,6 +60,7 @@
     <!-- iCheck -->
     <script src="assets/tmp/plugins/iCheck/icheck.min.js"></script>
     <script>
+
       $(function () {
         $('input').iCheck({
           checkboxClass: 'icheckbox_square-blue',

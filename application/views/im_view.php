@@ -63,7 +63,7 @@
             ?>
                 <tr>
                   <td class="mailbox-star"><a><i class="fa fa-star text-yellow"></i></a></td>
-                  <td class="mailbox-name"><a href="dialog?id=<?=$row['id'];?>"><?=$row['name'];?></a></td>
+                  <td class="mailbox-name"><a href="dialog?id=<?=$row['id'];?>#bms"><?=$row['name'];?></a></td>
                   <td class="mailbox-subject"><?=substr($row['text'],0,100);?></td>
                   <td class="mailbox-attachment"></td>
                   <td class="mailbox-date"><?=$row['data'];?></td>
