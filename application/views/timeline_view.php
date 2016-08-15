@@ -62,12 +62,14 @@
           </div>
           <div class="form-group">
             <div class="col-sm-6">
-            	<label class="control-label">Дата публікації</label>
-              	<input class="form-control" type="date" name="created">
+            	<!--<label class="control-label">Дата публікації</label>
+              	<input class="form-control" type="date" name="created">-->
+                <input type="text" class="form-control" placeholder="Дата публікації" name="created" id="datepickerFrom">
             </div>
             <div class="col-sm-6">
-            	<label class="control-label">Дата закінчення публікації</label>
-              	<input class="form-control" type="date" name="created">
+            	<!--<label class="control-label">Дата закінчення публікації</label>
+              	<input class="form-control" type="date" name="created">-->
+                <input type="text" class="form-control" placeholder="Дата закінчення публікації" name="created" id="datepickerTo">
             </div>
           </div>
           <div class="form-group">

@@ -86,5 +86,18 @@
     });
 
     </script>
+
+<!--з http://jqueryui.com/-->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepickerFrom" ).datepicker();
+    $( "#datepickerTo" ).datepicker();
+  } );
+  </script>
+<!--з http://jqueryui.com/-->
+
   </body>
 </html>
