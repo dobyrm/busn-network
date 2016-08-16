@@ -87,6 +87,15 @@
 
     </script>
 
+    <script>
+  $(function(){
+  $(".direct-chat-messages").animate({
+    scrollTop: $('#bms').offset().top
+  }, 1000);
+});
+
+</script>
+
 <!--з http://jqueryui.com/-->
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="/resources/demos/style.css">

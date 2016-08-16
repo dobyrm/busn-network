@@ -9,12 +9,12 @@
     <!-- Profile Image -->
     <div class="box box-primary">
       <div class="box-body box-profile">
-        <img class="profile-user-img img-responsive img-circle" src="assets/image/users/ava/<?=$row['ava'];?>" alt="<?=$row['name'];?>">
+        <img class="profile-user-img img-responsive img-circle" src="<?=$row['ava'];?>" alt="<?=$row['name'];?>">
         <h3 class="profile-username text-center"><?=$row['name'];?></h3>
         <p class="text-muted text-center"><?=$row['posada'];?></p>
 
         <!--<a href="#" class="btn btn-primary btn-block"><b>Підписатись</b></a>-->
-        <a href="dialog?id=<?=$row['id'];?>#bms" class="btn btn-success btn-block"><b>Повідомлення</b></a>
+        <a href="dialog?id=<?=$row['id'];?>" class="btn btn-success btn-block"><b>Повідомлення</b></a>
       </div><!-- /.box-body -->
     </div><!-- /.box -->
 
@@ -54,7 +54,7 @@
           <!-- Post -->
           <div class="post">
             <div class="user-block">
-              <img class="img-circle img-bordered-sm" src="assets/image/users/ava/<?=$row['ava'];?>" alt="<?=$row['name'];?>">
+              <img class="img-circle img-bordered-sm" src="<?=$row['ava'];?>" alt="<?=$row['name'];?>">
               <span class='username'>
                 <a href="friends?id=<?=$row['id'];?>"><?=$row['name'];?></a>
               </span>

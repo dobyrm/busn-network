@@ -6,7 +6,7 @@
               <!-- Profile Image -->
               <div class="box box-primary">
                 <div class="box-body box-profile">
-                  <img class="profile-user-img img-responsive img-circle" src="assets/image/users/ava/<?=$_SESSION['auchUsersSetings']['ava'];?>" alt="<?=$_SESSION['auchUsersSetings']['name'];?>">
+                  <img class="profile-user-img img-responsive img-circle" src="<?=$_SESSION['auchUsersSetings']['ava'];?>" alt="<?=$_SESSION['auchUsersSetings']['name'];?>">
                   <h3 class="profile-username text-center"><?=$_SESSION['auchUsersSetings']['name'];?></h3>
                   <p class="text-muted text-center"><?=$_SESSION['auchUsersSetings']['posada'];?></p>
 
@@ -76,7 +76,7 @@
                   <a href="friend?id=<?=$row['id_user_a'];?>"><span class="direct-chat-name pull-left"><?=$row['name'];?></span></a>
                   <span class="direct-chat-timestamp pull-right"><?=$row['data'];?></span>
                 </div><!-- /.direct-chat-info -->
-                <a href="friend?id=<?=$row['id_user_a'];?>"><img class="direct-chat-img" src="assets/image/users/ava/<?=$row['ava'];?>" alt="<?=$row['name'];?>"></a><!-- /.direct-chat-img -->
+                <a href="friend?id=<?=$row['id_user_a'];?>"><img class="direct-chat-img" src="<?=$row['ava'];?>" alt="<?=$row['name'];?>"></a><!-- /.direct-chat-img -->
                 <div class="direct-chat-text">
                   <?=$row['text'];?>
                 </div><!-- /.direct-chat-text -->

@@ -2,7 +2,7 @@
 class Model_Settings extends Model
 {
 
-	public function get_valid_data_setings($name, $email, $posada, $education, $address, $skills, $note)
+	public function get_valid_data_setings($name, $email, $posada, $education, $address, $skills, $note, $img)
 	{
 
 		if(empty($name)) 
@@ -15,7 +15,7 @@ class Model_Settings extends Model
 
 		if(empty($info))
         {
-			$this->get_read_data_setings($name, $email, $posada, $education, $address, $skills, $note);
+			$this->get_read_data_setings($name, $email, $posada, $education, $address, $skills, $note, $img);
 			unset($_SESSION['auchUsersSetings']);
 
 			$this->get_data_user_setings($_SESSION['userID']);
@@ -27,10 +27,11 @@ class Model_Settings extends Model
 		
 	}
 
-	public function get_read_data_setings($name, $email, $posada, $education, $address, $skills, $note)
+	public function get_read_data_setings($name, $email, $posada, $education, $address, $skills, $note, $img)
 	{
 
-		return mysqlQuery("UPDATE `". WS_DBPREFIX . 'users_setings' ."`
+		if($img == NULL){
+			return mysqlQuery("UPDATE `". WS_DBPREFIX . 'users_setings' ."`
 		                    	SET `name`		= '". $name ."',
 		                    		`email`		= '". $email ."',
 		                    		`posada`	= '". $posada ."',
@@ -40,6 +41,21 @@ class Model_Settings extends Model
 		                    		`note`		= '". $note ."'
 		                    	WHERE `id_user` = ". $_SESSION['userID'] .""
 	                     	);
+		}
+		else{
+			return mysqlQuery("UPDATE `". WS_DBPREFIX . 'users_setings' ."`
+		                    	SET `name`		= '". $name ."',
+		                    		`email`		= '". $email ."',
+		                    		`posada`	= '". $posada ."',
+		                    		`education`	= '". $education ."',
+		                    		`address`	= '". $address ."',
+		                    		`skills`	= '". $skills ."',
+		                    		`note`		= '". $note ."',
+		                    		`ava`		= '". $img ."'
+		                    	WHERE `id_user` = ". $_SESSION['userID'] .""
+	                     	);
+		}
+		
 
 	}
 

@@ -4,7 +4,7 @@
     <!-- Profile Image -->
     <div class="box box-primary">
       <div class="box-body box-profile">
-        <img class="profile-user-img img-responsive img-circle" src="assets/image/users/ava/<?=$_SESSION['auchUsersSetings']['ava'];?>" alt="<?=$_SESSION['auchUsersSetings']['name'];?>">
+        <img class="profile-user-img img-responsive img-circle" src="<?=$_SESSION['auchUsersSetings']['ava'];?>" alt="<?=$_SESSION['auchUsersSetings']['name'];?>">
         <h3 class="profile-username text-center"><?=$_SESSION['auchUsersSetings']['name'];?></h3>
         <p class="text-muted text-center"><?=$_SESSION['auchUsersSetings']['posada'];?></p>
 
@@ -63,7 +63,7 @@
             ?>
                 <tr>
                   <td class="mailbox-star"><a><i class="fa fa-star text-yellow"></i></a></td>
-                  <td class="mailbox-name"><a href="dialog?id=<?=$row['id'];?>#bms"><?=$row['name'];?></a></td>
+                  <td class="mailbox-name"><a href="dialog?id=<?=$row['id'];?>"><?=$row['name'];?></a></td>
                   <td class="mailbox-subject"><?=substr($row['text'],0,100);?></td>
                   <td class="mailbox-attachment"></td>
                   <td class="mailbox-date"><?=$row['data'];?></td>

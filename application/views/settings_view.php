@@ -4,7 +4,7 @@
     <!-- Profile Image -->
     <div class="box box-primary">
       <div class="box-body box-profile">
-        <img class="profile-user-img img-responsive img-circle" src="assets/image/users/ava/<?=$_SESSION['auchUsersSetings']['ava'];?>" alt="<?=$_SESSION['auchUsersSetings']['name'];?>">
+        <img class="profile-user-img img-responsive img-circle" src="<?=$_SESSION['auchUsersSetings']['ava'];?>" alt="<?=$_SESSION['auchUsersSetings']['name'];?>">
         <h3 class="profile-username text-center"><?=$_SESSION['auchUsersSetings']['name'];?></h3>
         <p class="text-muted text-center"><?=$_SESSION['auchUsersSetings']['posada'];?></p>
 
@@ -64,7 +64,7 @@
             <div class="form-group">
               <label for="inputName" class="col-sm-2 control-label">Аватарка</label>
               <div class="col-sm-10">
-                <input name="fileAva" type="file" /><br />
+                <input name="file" type="file" /><br />
               </div>
             </div>
             <div class="form-group">
