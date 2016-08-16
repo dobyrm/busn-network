@@ -57,25 +57,28 @@
         <form class="form-horizontal">
           <div class="form-group">
             <div class="col-sm-12">
+            <label class="control-label" style="padding:7px;color:#555;background-color:#eee;">Оголошення</label>
               <textarea class="form-control" id="inputExperience" placeholder="Новий Запис" rows="10" style="resize: none">В 12.00 з'явитись всім деканам в 202 кабінет. Для розгляду матеріалів по конференції</textarea>
             </div>
           </div>
           <div class="form-group">
             <div class="col-sm-6">
-            	<!--<label class="control-label">Дата публікації</label>
-              	<input class="form-control" type="date" name="created">-->
-                <input type="text" class="form-control" placeholder="Дата публікації" name="created" id="datepickerFrom">
+            	<label class="control-label" style="padding:7px;color:#555;background-color:#eee;">Дата публікації</label>
+              	<!--<input class="form-control" type="date" name="created">
+                <input type="text" class="form-control" placeholder="Дата публікації" name="created" id="datepickerFrom">-->
+                <input type="text" class="form-control" placeholder="Дата публікації" name="createdFrom" id="datetimepicker1">
             </div>
             <div class="col-sm-6">
-            	<!--<label class="control-label">Дата закінчення публікації</label>
-              	<input class="form-control" type="date" name="created">-->
-                <input type="text" class="form-control" placeholder="Дата закінчення публікації" name="created" id="datepickerTo">
+            	<label class="control-label" style="padding:7px;color:#555;background-color:#eee;">Дата відміни публікації</label>
+              	<!--<input class="form-control" type="date" name="created">
+                <input type="text" class="form-control" placeholder="Дата відміни публікації" name="created" id="datepickerTo">-->
+                <input type="text" class="form-control" placeholder="Дата відміни публікації" name="createdTo" id="datetimepicker2">
             </div>
           </div>
           <div class="form-group">
             <div class="col-sm-6">
+            <label class="control-label" style="padding:7px;color:#555;background-color:#eee;">Оголошення публікується</label>
               <select class="form-control">
-              	<option>Оголошення публікується</option>
               	<option>Всім</option>
               	<option>Ректорату</option>
               	<option>Деканату</option>
@@ -84,16 +87,16 @@
               </select>
             </div>
             <div class="col-sm-3">
+            <label class="control-label" style="padding:7px;color:#555;background-color:#eee;">Оголошення викладачам</label>
               <select class="form-control">
-                <option>Оголошення викладачам</option>
                 <option>КСІТ</option>
                 <option>Економічого</option>
                 <option>Юридичного</option>
               </select>
             </div>
             <div class="col-sm-3">
+            <label class="control-label" style="padding:7px;color:#555;background-color:#eee;">Оголошення студентам</label>
               <select class="form-control">
-                <option>Оголошення студентам</option>
                 <option>КСІТ</option>
                 <option>Економічого</option>
                 <option>Юридичного</option>

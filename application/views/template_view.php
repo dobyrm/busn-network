@@ -8,6 +8,8 @@
     <link rel="shortcut icon" href="assets/tmp/dist/img/favicon.ico" type="image/png">
     <!-- Bootstrap 3.3.5 -->
     <link rel="stylesheet" href="assets/tmp/bootstrap/css/bootstrap.min.css">
+    <!-- Bootstrap datetimepicker -->
+    <link rel="stylesheet" href="assets/tmp/bootstrap/css/bootstrap-datetimepicker.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Ionicons -->
@@ -46,8 +48,12 @@
 
     <!-- jQuery 2.1.4 -->
     <script src="assets/tmp/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <!-- Bootstrap moment-with-locales -->
+    <script src="assets/tmp/bootstrap/js/moment-with-locales.min.js"></script>
     <!-- Bootstrap 3.3.5 -->
     <script src="assets/tmp/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Bootstrap datetimepicker -->
+    <script type="text/javascript" src="assets/tmp/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
     <!-- FastClick -->
     <script src="assets/tmp/plugins/fastclick/fastclick.min.js"></script>
     <!-- AdminLTE App -->
@@ -59,6 +65,19 @@
 
     <!-- iCheck -->
     <script src="assets/tmp/plugins/iCheck/icheck.min.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+      var nowDate = new Date();
+      var year = nowDate.getFullYear();
+      var minDate = nowDate;
+      var maxDate = "31.12." + year;
+
+      $('#datetimepicker1').datetimepicker({pickTime: false, language: 'ru',defaultDate:nowDate,minDate:minDate,maxDate:maxDate});
+      $('#datetimepicker2').datetimepicker({pickTime: false, language: 'ru',defaultDate:nowDate,minDate:minDate,maxDate:maxDate});
+    });
+  </script>
+
     <script>
 
       $(function () {
@@ -67,6 +86,12 @@
           radioClass: 'iradio_square-blue',
           increaseArea: '20%' // optional
         });
+      });
+
+      $(function(){
+        $(".direct-chat-messages").animate({
+          scrollTop: $('#bms').offset().top
+        }, 1000);
       });
 
     $(".remembPassAuch").click(function() {
@@ -86,27 +111,6 @@
     });
 
     </script>
-
-    <script>
-  $(function(){
-  $(".direct-chat-messages").animate({
-    scrollTop: $('#bms').offset().top
-  }, 1000);
-});
-
-</script>
-
-<!--з http://jqueryui.com/-->
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    $( "#datepickerFrom" ).datepicker();
-    $( "#datepickerTo" ).datepicker();
-  } );
-  </script>
-<!--з http://jqueryui.com/-->
 
   </body>
 </html>

@@ -92,7 +92,7 @@
               <div class="input-group">
                 <input type="text" name="message" placeholder="Повідомлення..." class="form-control">
                 <span class="input-group-btn">
-                  <button type="submit" name="newMessage" value="newMessage" class="btn btn-primary btn-flat">Послати</button>
+                  <button type="submit" name="newMessage" value="newMessage" class="btn btn-primary btn-flat">Відправити</button>
                 </span>
               </div>
             </form>
