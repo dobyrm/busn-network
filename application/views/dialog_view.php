@@ -66,15 +66,21 @@
                 foreach($data as $row)
                 { 
               ?>
-              <!-- Message. Default to the left -->
+              
               <?php if($_SESSION['auchUsersSetings']['id'] == $row['id_user_a']) { 
-              echo '<div class="direct-chat-msg">';
+                $divConteiner = 'direct-chat-msg';
+                $pullName = 'pull-left';
+                $pullDate = 'pull-right';
                } else { 
-               echo '<div class="direct-chat-msg right">';
+                  $divConteiner = 'direct-chat-msg right';
+                  $pullName = 'pull-right';
+                  $pullDate = 'pull-left';
                } ?>
+               <!-- Message. Default to the left -->
+               <div class="<?=$divConteiner?>">
                 <div class="direct-chat-info clearfix">
-                  <a href="friend?id=<?=$row['id_user_a'];?>"><span class="direct-chat-name pull-left"><?=$row['name'];?></span></a>
-                  <span class="direct-chat-timestamp pull-right"><?=$row['data'];?></span>
+                  <a href="friend?id=<?=$row['id_user_a'];?>"><span class="direct-chat-name <?=$pullName;?>"><?=$row['name'];?></span></a>
+                  <span class="direct-chat-timestamp <?=$pullDate;?>"><?=$row['data'];?></span>
                 </div><!-- /.direct-chat-info -->
                 <a href="friend?id=<?=$row['id_user_a'];?>"><img class="direct-chat-img" src="<?=$row['ava'];?>" alt="<?=$row['name'];?>"></a><!-- /.direct-chat-img -->
                 <div class="direct-chat-text">
