@@ -80,6 +80,10 @@
 
     <script>
 
+    $(document).ready(function(){
+      $("#inputNewMess").focus();
+    });
+
       $(function () {
         $('input').iCheck({
           checkboxClass: 'icheckbox_square-blue',

@@ -90,7 +90,7 @@
           <div class="box-footer">
             <form action="" method="post">
               <div class="input-group">
-                <input type="text" name="message" placeholder="Повідомлення..." class="form-control">
+                <input type="text" name="message" id="inputNewMess" placeholder="Повідомлення..." class="form-control">
                 <span class="input-group-btn">
                   <button type="submit" name="newMessage" value="newMessage" class="btn btn-primary btn-flat">Відправити</button>
                 </span>
