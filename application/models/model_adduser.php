@@ -72,7 +72,7 @@ class Model_Adduser extends Model
 		                    		`address`	=	'',
 		                    		`skills`	=	'',
 		                    		`note`		=	'',
-		                    		`ava`		=	'". WS_HOST ."assets/image/users/ava/noAva.jpg',
+		                    		`ava`		=	'assets/image/users/ava/noAva.jpg',
 		                    		`position`	= 	'". $position ."',
 		                    		`hidden`	=	'0'"
 	                     	);

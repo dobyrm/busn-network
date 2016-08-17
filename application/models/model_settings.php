@@ -6,7 +6,10 @@ class Model_Settings extends Model
 	{
 
 		if(empty($name)) 
-            $info[] = WS_LANG_EMPTY_FORM;
+            $info[] = WS_LANG_EMPTY_NAME;
+
+        if(empty($posada)) 
+            $info[] = WS_LANG_EMPTY_POSADA;
 
         if(empty($email)) 
             $info[] = WS_LANG_EMPTY_EMAIL;          
