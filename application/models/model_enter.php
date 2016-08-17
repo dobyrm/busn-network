@@ -15,9 +15,7 @@ class Model_Enter extends Model
             $info[] = WS_LANG_SHORT_PASSWORD;  
             
         if(empty($login)) 
-            $info[] = WS_LANG_EMPTY_EMAIL;          
-        elseif(!Defaults::checkEmail($login)) 
-            $info[] = WS_LANG_INVALID_EMAIL;
+            $info[] = WS_LANG_EMPTY_EMAIL;
 
         if(empty($info))
         {
@@ -73,6 +71,7 @@ class Model_Enter extends Model
 			$_SESSION['auchUsersSetings']['skills'] 	= $dataUsersSetings['skills'];
 			$_SESSION['auchUsersSetings']['note'] 		= $dataUsersSetings['note'];
 			$_SESSION['auchUsersSetings']['ava'] 		= $dataUsersSetings['ava'];
+			$_SESSION['auchUsersSetings']['position'] 	= $dataUsersSetings['position'];
 
 			header('Location: /');
 

@@ -50,62 +50,89 @@
         <li><a href="im">Повідомлення</a></li>
         <li><a href="friends">Користувачі</a></li>
         <li class="active"><a href="settings">Налаштування</a></li>
+        <? if($_SESSION['auchUsersSetings']['position'] == 0) { ?>
+        <li><a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a></li>
+        <? } ?>
         <li class="pull-right"><a href="?exit"><i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
       </ul>
       <div class="tab-content">
         <div class="active tab-pane" id="settings">
           <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
             <div class="form-group">
-              <label for="inputName" class="col-sm-2 control-label">Ім'я</label>
-              <div class="col-sm-10">
+              <label for="inputName" class="col-sm-1 control-label">Ім'я</label>
+              <div class="col-sm-11">
                 <input type="text" class="form-control" id="inputName" name="name" placeholder="<?=$_SESSION['auchUsersSetings']['name'];?>" value="<?=$_SESSION['auchUsersSetings']['name'];?>">
               </div>
             </div>
             <div class="form-group">
-              <label for="inputName" class="col-sm-2 control-label">Аватарка</label>
-              <div class="col-sm-10">
+              <label for="inputName" class="col-sm-1 control-label">Аватарка</label>
+              <div class="col-sm-11">
                 <input name="file" type="file" /><br />
               </div>
             </div>
             <div class="form-group">
-              <label for="inputEmail" class="col-sm-2 control-label">E-mail</label>
-              <div class="col-sm-10">
+              <label for="inputEmail" class="col-sm-1 control-label">E-mail</label>
+              <div class="col-sm-11">
                 <input type="text" class="form-control" id="inputEmail" name="email" placeholder="<?=$_SESSION['auchUsersSetings']['email'];?>" value="<?=$_SESSION['auchUsersSetings']['email'];?>">
               </div>
             </div>
             <div class="form-group">
-              <label for="inputName" class="col-sm-2 control-label">Посада</label>
-              <div class="col-sm-10">
+              <label for="inputName" class="col-sm-1 control-label">Посада</label>
+              <div class="col-sm-11">
                 <input type="text" class="form-control" id="inputName" name="posada" placeholder="<?=$_SESSION['auchUsersSetings']['posada'];?>" value="<?=$_SESSION['auchUsersSetings']['posada'];?>">
               </div>
             </div>
             <div class="form-group">
-              <label for="inputSkills" class="col-sm-2 control-label">Освіта</label>
-              <div class="col-sm-10">
+              <label for="inputSkills" class="col-sm-1 control-label">Освіта</label>
+              <div class="col-sm-11">
                 <input type="text" class="form-control" id="inputSkills" name="education" placeholder="<?=$_SESSION['auchUsersSetings']['education'];?>" value="<?=$_SESSION['auchUsersSetings']['education'];?>">
               </div>
             </div>
             <div class="form-group">
-              <label for="inputSkills" class="col-sm-2 control-label">Адреса</label>
-              <div class="col-sm-10">
+              <label for="inputSkills" class="col-sm-1 control-label">Адреса</label>
+              <div class="col-sm-11">
                 <input type="text" class="form-control" id="inputSkills" name="address" placeholder="<?=$_SESSION['auchUsersSetings']['address'];?>" value="<?=$_SESSION['auchUsersSetings']['address'];?>">
               </div>
             </div>
             <div class="form-group">
-              <label for="inputSkills" class="col-sm-2 control-label">Навички</label>
-              <div class="col-sm-10">
+              <label for="inputSkills" class="col-sm-1 control-label">Навички</label>
+              <div class="col-sm-11">
                 <input type="text" class="form-control" id="inputSkills" name="skills" placeholder="Навички" value="<?=$_SESSION['auchUsersSetings']['skills'];?>">
               </div>
             </div>
             <div class="form-group">
-              <label for="inputExperience" class="col-sm-2 control-label">Примітка</label>
-              <div class="col-sm-10">
+              <label for="inputExperience" class="col-sm-1 control-label">Примітка</label>
+              <div class="col-sm-11">
                 <textarea class="form-control" id="inputExperience" name="note" placeholder="Примітка"><?=$_SESSION['auchUsersSetings']['note'];?></textarea>
               </div>
             </div>
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-10" style="text-align:right;">
                 <button type="submit" name="readMySeting" value="readMySeting" class="btn btn-primary">Відредагувати</button>
+              </div>
+            </div>
+          </form>
+          <hr />
+          <p>Зміна пароля</p>
+          <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+              <div class="col-sm-12">
+                <input type="password" class="form-control" name="pass" placeholder="Ваш пароль">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-12">
+                <input type="password" class="form-control" name="newPass" placeholder="Новий пароль">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-12">
+                <input type="password" class="form-control" name="succesPass" placeholder="Повторити пароль">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10" style="text-align:right;">
+                <button type="submit" name="readMyPass" value="readMyPass" class="btn btn-primary">Змінити</button>
               </div>
             </div>
           </form>

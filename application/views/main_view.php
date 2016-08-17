@@ -50,6 +50,9 @@
         <li><a href="im">Повідомлення</a></li>
         <li><a href="friends">Користувачі</a></li>
         <li><a href="settings">Налаштування</a></li>
+        <? if($_SESSION['auchUsersSetings']['position'] == 0) { ?>
+        <li><a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a></li>
+        <? } ?>
         <li class="pull-right"><a href="?exit"><i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
       </ul>
       <div class="tab-content">

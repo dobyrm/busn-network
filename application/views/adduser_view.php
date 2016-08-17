@@ -47,7 +47,7 @@
       <ul class="nav nav-tabs">
         <li><a href="/">Оголошення</a></li>
         <li><a href="timeline">Лінія</a></li>
-        <li class="active"><a href="im">Повідомлення</a></li>
+        <li><a href="im">Повідомлення</a></li>
         <li><a href="friends">Користувачі</a></li>
         <li><a href="settings">Налаштування</a></li>
         <? if($_SESSION['auchUsersSetings']['position'] == 0) { ?>
@@ -56,33 +56,49 @@
         <li class="pull-right"><a href="?exit"><i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
       </ul>
       <div class="tab-content">
-        <div class="active tab-pane" id="message">
-          <div class="table-responsive mailbox-messages">
-          <table class="table table-hover table-striped">
-            <tbody>
-            <?php
-              foreach($data as $row)
-              { 
-            ?>
-                <tr>
-                  <td class="mailbox-star"><a><i class="fa fa-star text-yellow"></i></a></td>
-                  <td class="mailbox-name"><a href="dialog?id=<?=$row['id_user'];?>"><?=$row['name'];?></a></td>
-                  <td class="mailbox-subject"><?=substr($row['text'],0,100);?></td>
-                  <td class="mailbox-attachment"></td>
-                  <td class="mailbox-date"><?=$row['data'];?></td>
-                  <td class="mailbox-date">
-                    <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
-                    <input type="hidden" name="dialogID" value="<?=$row['id_dialog'];?>">
-                    <button type="submit" name="deleteMessage" value="deleteMessage" class="btn btn-primary" style="    padding:0px 5px!important;"><i class='fa fa-times'></i></button>
-                    </form>
-                  </td>
-                </tr>
-            <?php 
-              } 
-            ?>
-            </tbody>
-          </table><!-- /.table -->
-        </div>
+        <div class="active tab-pane" id="settings">
+          <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+              <div class="col-sm-12">
+                <label class="control-label" style="padding:7px;color:#555;background-color:#eee;">Логін</label>
+                <input type="text" class="form-control" name="login" placeholder="Логін">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-12">
+                <label class="control-label" style="padding:7px;color:#555;background-color:#eee;">Пароль</label>
+                <input type="password" class="form-control" name="pass" placeholder="Пароль">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-12">
+                <label class="control-label" style="padding:7px;color:#555;background-color:#eee;">Ім'я</label>
+                <input type="text" class="form-control" name="name" placeholder="Ім'я">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-12">
+                <label class="control-label" style="padding:7px;color:#555;background-color:#eee;">Посада</label>
+                <input type="text" class="form-control" name="posada" placeholder="Посада">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-12">
+                <label class="control-label" style="padding:7px;color:#555;background-color:#eee;">Позиція</label>
+                <select class="form-control" name="position">
+                  <option value="1">Викладач</option>
+                  <option value="2">Студент</option>
+                  <option></option>
+                  <option value="0">Адміністратор</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10" style="text-align:right;">
+                <button type="submit" name="addUser" value="addUser" class="btn btn-primary">Додати</button>
+              </div>
+            </div>
+          </form>
         </div><!-- /.tab-pane -->
       </div><!-- /.tab-content -->
     </div><!-- /.nav-tabs-custom -->

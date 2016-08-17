@@ -45,7 +45,28 @@
            immediately after the control sidebar -->
       <div class="control-sidebar-bg"></div>
     </div><!-- ./wrapper -->
-
+<? if($_SESSION['auchUsersSetings']['position'] == 0) { ?>
+<aside class="control-sidebar control-sidebar-dark">
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <!-- Settings tab content -->
+    <div class="tab-pane active" id="control-sidebar-settings-tab">
+      <h3 class="control-sidebar-heading">Генеральні налаштування</h3>
+      <ul class="control-sidebar-menu">
+        <li>
+          <a href="adduser">
+            <i class="menu-icon fa fa-user bg-yellow"></i>
+            <div class="menu-info">
+              <h4 class="control-sidebar-subheading">Додати користувача</h4>
+              <p>Додати користувача до сайту</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div><!-- /.tab-pane -->
+  </div>
+</aside>
+<? } ?>
     <!-- jQuery 2.1.4 -->
     <script src="assets/tmp/plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <!-- Bootstrap moment-with-locales -->

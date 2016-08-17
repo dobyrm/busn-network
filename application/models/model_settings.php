@@ -79,7 +79,55 @@ class Model_Settings extends Model
 			$_SESSION['auchUsersSetings']['skills'] 	= $dataUsersSetings['skills'];
 			$_SESSION['auchUsersSetings']['note'] 		= $dataUsersSetings['note'];
 			$_SESSION['auchUsersSetings']['ava'] 		= $dataUsersSetings['ava'];
+			$_SESSION['auchUsersSetings']['position'] 	= $dataUsersSetings['position'];
 
+	}
+
+	public function get_valid_data_setings_pass($pass, $newPass, $succesPass)
+	{
+		
+		$res = mysqlQuery("SELECT `pass` FROM `". WS_DBPREFIX . 'users' ."` WHERE id = ". $_SESSION['auchUsersSetings']['id'] ." ");
+
+		if(mysqli_num_rows($res) > 0){
+			$data = mysqli_fetch_assoc($res);
+		}
+
+		$passMd5 = md5($pass);
+
+		if($data['pass'] != $passMd5){
+			$info[] = WS_LANG_EMPTY_OLD_PASSWORD_INVALID;
+		}
+
+		if(empty($pass)) 
+            $info[] = WS_LANG_EMPTY_PASSWORD;
+        elseif(mb_strlen($pass, 'utf-8') < 4) 
+            $info[] = WS_LANG_SHORT_PASSWORD; 
+
+        if(empty($newPass)) 
+            $info[] = WS_LANG_EMPTY_PASSWORD_NEW;
+        elseif(mb_strlen($newPass, 'utf-8') < 4) 
+            $info[] = WS_LANG_SHORT_PASSWORD;
+
+        if($newPass != $succesPass)
+        	$info[] = WS_LANG_EMPTY_PASSWORD_DO_NOT_MATCH;
+
+		if(empty($info))
+        {
+			
+			$this->get_read_data_setings_pass($newPass);
+			return $infoSucces = WS_LANG_SUCCES;
+
+		}
+		else
+			return $info = Defaults::getInfo($info);
+	}
+
+	public function get_read_data_setings_pass($pass)
+	{
+		return mysqlQuery("UPDATE `". WS_DBPREFIX . 'users' ."`
+		                    	SET `pass`		= '". md5($pass) ."'
+		                    	WHERE `id` = ". $_SESSION['userID'] .""
+	                     	);
 	}
 
 }

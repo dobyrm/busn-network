@@ -31,6 +31,11 @@ class Controller_Settings extends Controller
 			
 		}
 
+		if($_POST['readMyPass'])
+		{
+			$info = $this->action_form_valid_data_setings_pass();
+		}
+
 		$this->view->generate('settings_view.php', 'template_view.php', $data, $info);
 
 	}
@@ -38,6 +43,11 @@ class Controller_Settings extends Controller
 	function action_form_valid_data_setings()
 	{	
 		return $this->model->get_valid_data_setings($_POST['name'], $_POST['email'], $_POST['posada'], $_POST['education'], $_POST['address'], $_POST['skills'], $_POST['note'], $this->img);
+	}
+
+	function action_form_valid_data_setings_pass()
+	{	
+		return $this->model->get_valid_data_setings_pass($_POST['pass'], $_POST['newPass'], $_POST['succesPass']);
 	}
 	
 }
