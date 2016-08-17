@@ -5,7 +5,7 @@
     <title>ПВНЗ "Буковинський університет"</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link rel="shortcut icon" href="assets/tmp/dist/img/favicon.ico" type="image/png">
+    <link rel="shortcut icon" href="assets/tmp/dist/img/ico.png" type="image/png">
     <!-- Bootstrap 3.3.5 -->
     <link rel="stylesheet" href="assets/tmp/bootstrap/css/bootstrap.min.css">
     <!-- Bootstrap datetimepicker -->
@@ -57,8 +57,8 @@
           <a href="adduser">
             <i class="menu-icon fa fa-user bg-yellow"></i>
             <div class="menu-info">
-              <h4 class="control-sidebar-subheading">Додати користувача</h4>
-              <p>Додати користувача до сайту</p>
+              <h4 class="control-sidebar-subheading">Регістрація</h4>
+              <p>Зареєструвати користувача на сайті</p>
             </div>
           </a>
         </li>

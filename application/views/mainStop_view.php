@@ -5,7 +5,7 @@
     <title>ПВНЗ "Буковинський університет"</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link rel="shortcut icon" href="assets/tmp/dist/img/favicon.ico" type="image/png">
+    <link rel="shortcut icon" href="assets/tmp/dist/img/ico.ico" type="image/png">
     <!-- Bootstrap 3.3.5 -->
     <link rel="stylesheet" href="assets/tmp/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->

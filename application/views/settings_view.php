@@ -56,53 +56,54 @@
         <li class="pull-right"><a href="?exit"><i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
       </ul>
       <div class="tab-content">
-        <div class="active tab-pane" id="settings">
+        <div class="active tab-pane formSettings" id="settings">
+          <p class="SettingsView">Редагування персональних даних</p>
           <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
             <div class="form-group">
-              <label for="inputName" class="col-sm-1 control-label">Ім'я</label>
-              <div class="col-sm-11">
+              <div class="col-sm-12">
+                <label for="inputName" class="control-label">Ім'я</label>
                 <input type="text" class="form-control" id="inputName" name="name" placeholder="<?=$_SESSION['auchUsersSetings']['name'];?>" value="<?=$_SESSION['auchUsersSetings']['name'];?>">
               </div>
             </div>
             <div class="form-group">
-              <label for="inputName" class="col-sm-1 control-label">Аватарка</label>
-              <div class="col-sm-11">
+              <div class="col-sm-12">
+                <label for="inputName" class="control-label">Аватарка</label>
                 <input name="file" type="file" /><br />
               </div>
             </div>
             <div class="form-group">
-              <label for="inputEmail" class="col-sm-1 control-label">E-mail</label>
-              <div class="col-sm-11">
+              <div class="col-sm-12">
+                <label for="inputEmail" class="control-label">E-mail</label>
                 <input type="text" class="form-control" id="inputEmail" name="email" placeholder="<?=$_SESSION['auchUsersSetings']['email'];?>" value="<?=$_SESSION['auchUsersSetings']['email'];?>">
               </div>
             </div>
             <div class="form-group">
-              <label for="inputName" class="col-sm-1 control-label">Посада</label>
-              <div class="col-sm-11">
+              <div class="col-sm-12">
+                <label for="inputName" class="control-label">Посада</label>
                 <input type="text" class="form-control" id="inputName" name="posada" placeholder="<?=$_SESSION['auchUsersSetings']['posada'];?>" value="<?=$_SESSION['auchUsersSetings']['posada'];?>">
               </div>
             </div>
             <div class="form-group">
-              <label for="inputSkills" class="col-sm-1 control-label">Освіта</label>
-              <div class="col-sm-11">
+              <div class="col-sm-12">
+                <label for="inputSkills" class="control-label">Освіта</label>
                 <input type="text" class="form-control" id="inputSkills" name="education" placeholder="<?=$_SESSION['auchUsersSetings']['education'];?>" value="<?=$_SESSION['auchUsersSetings']['education'];?>">
               </div>
             </div>
             <div class="form-group">
-              <label for="inputSkills" class="col-sm-1 control-label">Адреса</label>
-              <div class="col-sm-11">
+              <div class="col-sm-12">
+                <label for="inputSkills" class="control-label">Адреса</label>
                 <input type="text" class="form-control" id="inputSkills" name="address" placeholder="<?=$_SESSION['auchUsersSetings']['address'];?>" value="<?=$_SESSION['auchUsersSetings']['address'];?>">
               </div>
             </div>
             <div class="form-group">
-              <label for="inputSkills" class="col-sm-1 control-label">Навички</label>
-              <div class="col-sm-11">
+              <div class="col-sm-12">
+                <label for="inputSkills" class="control-label">Навички</label>
                 <input type="text" class="form-control" id="inputSkills" name="skills" placeholder="Навички" value="<?=$_SESSION['auchUsersSetings']['skills'];?>">
               </div>
             </div>
             <div class="form-group">
-              <label for="inputExperience" class="col-sm-1 control-label">Примітка</label>
-              <div class="col-sm-11">
+              <div class="col-sm-12">
+                <label for="inputExperience" class="control-label">Примітка</label>
                 <textarea class="form-control" id="inputExperience" name="note" placeholder="Примітка"><?=$_SESSION['auchUsersSetings']['note'];?></textarea>
               </div>
             </div>
@@ -113,20 +114,23 @@
             </div>
           </form>
           <hr />
-          <p>Зміна пароля</p>
+          <p class="SettingsView">Зміна пароля</p>
           <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
             <div class="form-group">
               <div class="col-sm-12">
+                <label class="control-label">Ваш пароль</label>
                 <input type="password" class="form-control" name="pass" placeholder="Ваш пароль">
               </div>
             </div>
             <div class="form-group">
               <div class="col-sm-12">
+                <label class="control-label">Новий пароль</label>
                 <input type="password" class="form-control" name="newPass" placeholder="Новий пароль">
               </div>
             </div>
             <div class="form-group">
               <div class="col-sm-12">
+                <label class="control-label">Повторити пароль</label>
                 <input type="password" class="form-control" name="succesPass" placeholder="Повторити пароль">
               </div>
             </div>

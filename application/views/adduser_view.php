@@ -57,6 +57,7 @@
       </ul>
       <div class="tab-content">
         <div class="active tab-pane" id="settings">
+          <p class="SettingsView">Регістрація нового користувача</p>
           <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
             <div class="form-group">
               <div class="col-sm-12">
