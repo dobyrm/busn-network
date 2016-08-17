@@ -86,7 +86,8 @@ class Route
 	function ErrorPage404()
 	{
         header('HTTP/1.1 404 Not Found');
-		header("Status: 404 Not Found");
+        //нажче закоментований заголовок не робе на субдомені
+		//header("Status: 404 Not Found");
 		header('Location:'.WS_HOST.'404');
     }
 
