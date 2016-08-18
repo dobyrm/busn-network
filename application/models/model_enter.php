@@ -74,6 +74,8 @@ class Model_Enter extends Model
 			$_SESSION['auchUsersSetings']['ava'] 		= $dataUsersSetings['ava'];
 			$_SESSION['auchUsersSetings']['position'] 	= $dataUsersSetings['position'];
 
+			$_SESSION['userId'] = $dataUsersSetings['id_user'];
+
 			setcookie("auchUsersId", $_SESSION['auchUsersSetings']['id'], time()+3600);
 
 			header('Location: /');

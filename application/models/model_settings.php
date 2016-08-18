@@ -21,7 +21,7 @@ class Model_Settings extends Model
 			$this->get_read_data_setings($name, $email, $posada, $education, $address, $skills, $note, $img);
 			unset($_SESSION['auchUsersSetings']);
 
-			$this->get_data_user_setings($_SESSION['userID']);
+			$this->get_data_user_setings($_SESSION['userId']);
 
 			Defaults::reDirect();
 		}
@@ -42,7 +42,7 @@ class Model_Settings extends Model
 		                    		`address`	= '". $address ."',
 		                    		`skills`	= '". $skills ."',
 		                    		`note`		= '". $note ."'
-		                    	WHERE `id_user` = ". $_SESSION['userID'] .""
+		                    	WHERE `id_user` = ". $_SESSION['userId'] .""
 	                     	);
 		}
 		else{
@@ -55,7 +55,7 @@ class Model_Settings extends Model
 		                    		`skills`	= '". $skills ."',
 		                    		`note`		= '". $note ."',
 		                    		`ava`		= '". $img ."'
-		                    	WHERE `id_user` = ". $_SESSION['userID'] .""
+		                    	WHERE `id_user` = ". $_SESSION['userId'] .""
 	                     	);
 		}
 		
@@ -129,7 +129,7 @@ class Model_Settings extends Model
 	{
 		return mysqlQuery("UPDATE `". WS_DBPREFIX . 'users' ."`
 		                    	SET `pass`		= '". md5($pass) ."'
-		                    	WHERE `id` = ". $_SESSION['userID'] .""
+		                    	WHERE `id` = ". $_SESSION['userId'] .""
 	                     	);
 	}
 

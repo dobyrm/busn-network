@@ -45,6 +45,8 @@ class Defaults
             $_SESSION['auchUsersSetings']['ava']        = $dataUsersSetings['ava'];
             $_SESSION['auchUsersSetings']['position']   = $dataUsersSetings['position'];
 
+            $_SESSION['userId'] = $dataUsersSetings['id_user'];
+
     }
 
     function checkEmail($to)   
