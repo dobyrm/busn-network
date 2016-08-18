@@ -10,11 +10,41 @@ class Defaults
     {
     	if(isset($_GET['exit']))
     	{
-			session_destroy(); 
+            Defaults::delCookieAndSession();
 			#redirect
 			header('Location: /');
 			exit;
 		}
+    }
+
+    function delCookieAndSession()
+    {
+        setcookie ("login", "", time() - 2592000);
+        setcookie ("pass", "", time() - 2592000);
+        setcookie ("auch", "", time() - 2592000);
+        setcookie ("auchUsersId", "", time() - 2592000);
+        session_destroy();
+    }
+
+    function get_data_user_setingsCookie($id)
+    {
+
+        $dataUsersSetings = mysqlQuery("SELECT * FROM `". WS_DBPREFIX . 'users_setings' ."` WHERE id_user = ". $id ." ");
+            if(mysqli_num_rows($dataUsersSetings) > 0){
+                $dataUsersSetings = mysqli_fetch_assoc($dataUsersSetings);
+            }
+
+            $_SESSION['auchUsersSetings']['id']         = $dataUsersSetings['id_user'];
+            $_SESSION['auchUsersSetings']['name']       = $dataUsersSetings['name'];
+            $_SESSION['auchUsersSetings']['email']      = $dataUsersSetings['email'];
+            $_SESSION['auchUsersSetings']['posada']     = $dataUsersSetings['posada'];
+            $_SESSION['auchUsersSetings']['education']  = $dataUsersSetings['education'];
+            $_SESSION['auchUsersSetings']['address']    = $dataUsersSetings['address'];
+            $_SESSION['auchUsersSetings']['skills']     = $dataUsersSetings['skills'];
+            $_SESSION['auchUsersSetings']['note']       = $dataUsersSetings['note'];
+            $_SESSION['auchUsersSetings']['ava']        = $dataUsersSetings['ava'];
+            $_SESSION['auchUsersSetings']['position']   = $dataUsersSetings['position'];
+
     }
 
     function checkEmail($to)   

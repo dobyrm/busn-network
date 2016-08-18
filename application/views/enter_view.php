@@ -17,9 +17,9 @@
           <div class="row">
             <div class="col-xs-8">
               <div class="checkbox icheck">
-                <!--<label>
-                  <input type="checkbox"> Пам'ятай мене
-                </label>-->
+                <label>
+                  <input name="save" type="checkbox" value="1"> Пам'ятай мене
+                </label>
               </div>
             </div><!-- /.col -->
             <div class="col-xs-4">

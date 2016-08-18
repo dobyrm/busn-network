@@ -28,8 +28,10 @@ require_once 'core/route.php';
 
 if(WS_SITE_STOP == 1)
 	Route::SiteStop();
-elseif(isset($_SESSION['auch']))
+elseif(isset($_SESSION['auch']) OR isset($_COOKIE["auch"]) AND isset($_COOKIE["login"])){
+	Defaults::get_data_user_setingsCookie($_COOKIE["auchUsersId"]);
 	Route::start(); //запускаем маршрутизатор
+}
 else
 	Route::enter();
 

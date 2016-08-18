@@ -13,6 +13,10 @@ class Controller_Enter extends Controller
 
 		if($_POST['enter']){
 			$valid_data = $this->action_form_valid_data();
+			if ($_POST['save']){
+				setcookie("login", $_POST["login"], time() + 2592000);
+				setcookie("pass", $_POST["pass"], time() + 2592000);
+				}
 		}
 
 		$this->view->generate('enter_view.php', 'template_view.php', $valid_data);
