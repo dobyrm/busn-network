@@ -20,7 +20,7 @@ class Model_Dialog extends Model
 
 		return mysqlQuery("SELECT `id_mess`, `id_user_a`, `id_user_b`, `text`, `id_dialog`, `data`, `id_user`, `name`, `ava` FROM `". WS_DBPREFIX . 'im' ."`,`". WS_DBPREFIX . 'users_setings' ."` 
 			WHERE 	". WS_DBPREFIX . 'im' .".id_user_a = ". WS_DBPREFIX . 'users_setings' .".id_user 
-			AND 	". WS_DBPREFIX . 'im' .".id_dialog = ". $this->whereIdDialog ." 
+			AND 	". WS_DBPREFIX . 'im' .".id_dialog = ". (int)$this->whereIdDialog ." 
 			ORDER BY id_mess");
 	}
 
