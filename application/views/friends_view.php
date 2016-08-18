@@ -78,7 +78,7 @@
             <div class="box box-primary">
               <div class="box-body box-profile">
                 <img class="profile-user-img img-responsive img-circle" src="<?=$row['ava'];?>" alt="<?=$row['name'];?>">
-                <a href="friend?id=<?=$row['id'];?>"><h3 class="profile-username text-center"><?=$row['name'];?></h3></a>
+                <a href="friend?id=<?=$row['id_user'];?>"><h3 class="profile-username text-center"><?=$row['name'];?></h3></a>
                 <p class="text-muted text-center"><?=$row['posada'];?></p>
               </div><!-- /.box-body -->
           </div><!-- /.box -->

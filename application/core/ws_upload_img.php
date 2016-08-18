@@ -41,8 +41,8 @@ class WS_Upload_Img
         {
             $this->name = $this->generateFilename($file);
             $this->name .=  '.'. $extension;            
-            $this->new_name  = $dir . $this->name;
-            $upload_name = $dir . $this->name; 
+            $this->new_name  = WS_HOST . $dir . $this->name;
+            $upload_name = WS_ROOT .'/'. $dir . $this->name; 
 
             if(move_uploaded_file($_FILES[$file]['tmp_name'], $upload_name))
                 return false; 

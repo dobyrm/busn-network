@@ -56,7 +56,7 @@
             <div class="user-block">
               <img class="img-circle img-bordered-sm" src="<?=$row['ava'];?>" alt="<?=$row['name'];?>">
               <span class='username'>
-                <a href="friend?id=<?=$row['id'];?>"><?=$row['name'];?></a>
+                <a href="friend?id=<?=$row['id_user'];?>"><?=$row['name'];?></a>
               </span>
               <span class='description'>Опубліковано - 7:30 PM today</span>
             </div><!-- /.user-block -->
