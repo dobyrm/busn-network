@@ -47,7 +47,7 @@
         <li><a style="color:#AAB7C5;" data-toggle="tab">Останій візит <?=$row['dataentry'];?></a></li>
         <li class="pull-right"><a href="?exit"><i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
         <li class="pull-right"><a href="/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-        <li class="pull-right"><a href="<?=$_SERVER['HTTP_REFERER'];?>"><i class="fa fa-history" aria-hidden="true"></i></a></li>
+        <li class="pull-right"><a href="friends"><i class="fa fa-history" aria-hidden="true"></i></a></li>
       </ul>
       <div class="tab-content">
         <div class="active tab-pane" id="activity">
