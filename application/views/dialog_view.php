@@ -51,7 +51,7 @@
           <div class="box-header with-border">
             <h3 class="box-title">Чат</h3>
             <div class="box-tools pull-right">
-              <a href="<?=$_SERVER['HTTP_REFERER'];?>"><i class="fa fa-history" aria-hidden="true"></i>&nbsp;&nbsp;</a>
+              <a href="im"><i class="fa fa-history" aria-hidden="true"></i>&nbsp;&nbsp;</a>
               <a href="/"><i class="fa fa-home" aria-hidden="true"></i></a>
               <!--<span data-toggle="tooltip" title="3 Нові повідомлення" class="badge bg-light-blue">3</span>
               <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
