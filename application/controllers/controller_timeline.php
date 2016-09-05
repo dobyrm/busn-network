@@ -11,7 +11,11 @@ class Controller_Timeline extends Controller
 	function action_index()
 	{
 
-		$data = $this->model->get_data_friends();
+		if($_POST['serValue'])
+			$data = $this->model->get_ser($_POST['serValue']);
+		else
+			$data = $this->model->get_data_friends();
+		
 		$this->view->generate('timeline_view.php', 'template_view.php', $data);
 
 	}

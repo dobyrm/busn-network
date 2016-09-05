@@ -57,7 +57,7 @@
       </ul>
       <div class="tab-content">
         <div class="active tab-pane" id="timeline">
-        <form class="form-horizontal">
+        <form action="" method="post" class="form-horizontal">
           <div class="form-group">
             <div class="col-sm-12">
             <label class="control-label" style="padding:7px;color:#555;background-color:#eee;">Оголошення</label>
@@ -107,6 +107,13 @@
             </div>
           </div>-->
           <div class="form-group">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <div class="col-sm-12">
+                      <input type="text" class="form-control" id="inputName" name="serValue" value="<?php if($_POST['serValue']) echo $_POST['serValue']; ?>" placeholder="Ім'я або Прізвище" />
+                    </div>
+                 </div>
+            </div>
           <div class="ui-widget ui-helper-clearfix">
             <div class="col-md-6">
             <ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix">
