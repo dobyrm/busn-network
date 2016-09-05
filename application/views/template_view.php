@@ -169,10 +169,10 @@
             .find( "a.ui-icon-refresh" )
               .remove()
             .end()
-            .css( "width", "150px")
+            .css( "width", "145px")
             .append( trash_icon )
             .find( "img" )
-              .css( "height", "150px" )
+              .css( "height", "145px" )
             .end()
             .appendTo( $gallery )
             .fadeIn();
