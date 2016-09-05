@@ -19,16 +19,16 @@ class Defaults
 
     function delCookieAndSession()
     {
-        setcookie ("login", "", time() - 2592000);
-        setcookie ("pass", "", time() - 2592000);
-        setcookie ("auch", "", time() - 2592000);
-        setcookie ("auchUsersId", "", time() - 2592000);
+        setcookie ("login", "", time()+7*24*60*60);
+        setcookie ("pass", "", time()+7*24*60*60);
+        setcookie ("auch", "", time()+7*24*60*60);
+        setcookie ("auchUsersId", "", time()+7*24*60*60);
         session_destroy();
     }
 
     function get_data_user_setingsCookie($id)
     {
-
+        
         $dataUsersSetings = mysqlQuery("SELECT * FROM `". WS_DBPREFIX . 'users_setings' ."` WHERE id_user = ". $id ." ");
             if(mysqli_num_rows($dataUsersSetings) > 0){
                 $dataUsersSetings = mysqli_fetch_assoc($dataUsersSetings);

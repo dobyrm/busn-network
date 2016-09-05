@@ -11,7 +11,8 @@ class Controller_Timeline extends Controller
 	function action_index()
 	{
 
-		$this->view->generate('timeline_view.php', 'template_view.php', $data, $info);
+		$data = $this->model->get_data_friends();
+		$this->view->generate('timeline_view.php', 'template_view.php', $data);
 
 	}
 	

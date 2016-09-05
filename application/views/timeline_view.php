@@ -61,7 +61,7 @@
           <div class="form-group">
             <div class="col-sm-12">
             <label class="control-label" style="padding:7px;color:#555;background-color:#eee;">Оголошення</label>
-              <textarea class="form-control" id="inputExperience" placeholder="Новий Запис" rows="10" style="resize: none">В 12.00 з'явитись всім деканам в 202 кабінет. Для розгляду матеріалів по конференції</textarea>
+              <textarea class="form-control" id="inputExperience" placeholder="Оголошення користувачам" rows="10" style="resize: none">В 12.00 з'явитись всім деканам в 202 кабінет. Для розгляду матеріалів по конференції</textarea>
             </div>
           </div>
           <div class="form-group">
@@ -78,7 +78,7 @@
                 <input type="text" class="form-control" placeholder="Дата відміни публікації" name="createdTo" id="datetimepicker2">
             </div>
           </div>
-          <div class="form-group">
+          <!--<div class="form-group">
             <div class="col-sm-6">
             <label class="control-label" style="padding:7px;color:#555;background-color:#eee;">Оголошення публікується</label>
               <select class="form-control">
@@ -105,8 +105,35 @@
                 <option>Юридичного</option>
               </select>
             </div>
-          </div>
+          </div>-->
+          <div class="form-group">
+          <div class="ui-widget ui-helper-clearfix">
+            <div class="col-md-6">
+            <ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix">
+            <?php
+              foreach($data as $row)
+              { 
+            ?>
+              <li class="ui-widget-content ui-corner-tr">
+                <h5 class="ui-widget-header"><?=$row['name']?></h5>
+                <img src="<?=$row['ava']?>" alt="<?=$row['name']?>" width="150" height="150">
+                <a href="link/to/trash/script/when/we/have/js/off" title="Delete this image" class="ui-icon ui-icon-trash">Delete image</a>
+              </li>
+            <?php 
+              } 
+            ?>
+            </ul>   
+            </div>
+            <div class="col-md-6">
+            <div id="trash" class="ui-widget-content ui-state-default">
+              <h4 class="ui-widget-header"><span class="ui-icon ui-icon-trash">Кому публікувати</span> Кому публікувати</h4>
+            </div>
+            </div>
+            </div>
+            </div>
+
             <div class="form-group">
+            <br />
               <div class="col-sm-offset-2 col-sm-10" style="text-align:right;">
                 <button type="submit" class="btn btn-primary">Публікувати</button>
               </div>
