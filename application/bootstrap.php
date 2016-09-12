@@ -34,6 +34,4 @@ elseif(isset($_SESSION['auch']) OR isset($_COOKIE["auch"]) AND isset($_COOKIE["l
 }
 else
 	Route::enter();
-
-
 //unset($_SESSION['auch']);

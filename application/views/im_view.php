@@ -57,14 +57,26 @@
       </ul>
       <div class="tab-content">
         <div class="active tab-pane" id="message">
+          <div class="row">
+            <div class="col-md-12">
+              <form class="form-horizontal" action="" method="post" name="form" onsubmit="return false;">
+                <div class="form-group">
+                  <div class="col-sm-12">
+                    <input type="text" class="form-control" id="searchim" name="serValue" value="<?php if($_POST['serValue']) echo $_POST['serValue']; ?>" placeholder="Ім'я або Прізвище">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
           <div class="table-responsive mailbox-messages">
+          <div id="resSearch"></div>
           <table class="table table-hover table-striped">
             <tbody>
             <?php
               foreach($data as $row)
               { 
             ?>
-                <tr>
+                <tr class="hiddenAjax">
                   <td class="mailbox-star"><a><i class="fa fa-star text-yellow"></i></a></td>
                   <td class="mailbox-name"><a href="dialog?id=<?=$row['id_user'];?>"><?=$row['name'];?></a></td>
                   <td class="mailbox-subject"><?=substr($row['text'],0,100);?></td>

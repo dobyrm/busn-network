@@ -59,21 +59,22 @@
         <div class="active tab-pane" id="friends">
         	<div class="row">
           	<div class="col-md-12">
-          		<form class="form-horizontal" action="" method="post">
+          		<form class="form-horizontal" action="" method="post" name="form" onsubmit="return false;">
           			<div class="form-group">
                     <div class="col-sm-12">
-                      <input type="text" class="form-control" id="inputName" name="serValue" value="<?php if($_POST['serValue']) echo $_POST['serValue']; ?>" placeholder="Ім'я або Прізвище">
+                      <input type="text" class="form-control" id="searchfriends" name="serValue" value="<?php if($_POST['serValue']) echo $_POST['serValue']; ?>" placeholder="Ім'я або Прізвище">
                     </div>
                  </div>
           		</form>
           	</div>
         	</div>
         	<div class="row">
+              <div id="resSearch"></div>
           <?php
             foreach($data as $row)
             { 
           ?>
-          <div class="col-md-3">
+          <div class="col-md-3 hiddenAjax">
             <!-- Profile Image -->
             <div class="box box-primary">
               <div class="box-body box-profile">

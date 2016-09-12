@@ -105,13 +105,14 @@
     <script src="assets/tmp/plugins/jQuery/jQuery-2.1.4.min.js"></script>
 <!--http://jqueryui.com/-->
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+
     <script>
     $( function() {
-   
+
       // There's the gallery and the trash
       var $gallery = $( "#gallery" ),
         $trash = $( "#trash" );
-   
+
       // Let the gallery items be draggable
       $( "li", $gallery ).draggable({
         cancel: "a.ui-icon", // clicking an icon won't initiate dragging
@@ -120,7 +121,7 @@
         helper: "clone",
         cursor: "move"
       });
-   
+
       // Let the trash be droppable, accepting the gallery items
       $trash.droppable({
         accept: "#gallery > li",
@@ -131,7 +132,7 @@
           deleteImage( ui.draggable );
         }
       });
-   
+
       // Let the gallery be droppable as well, accepting items from the trash
       $gallery.droppable({
         accept: "#trash li",
@@ -142,7 +143,7 @@
           recycleImage( ui.draggable );
         }
       });
-   
+
       // Image deletion function
       var recycle_icon = "<a href='link/to/recycle/script/when/we/have/js/off' title='Recycle this image' class='ui-icon ui-icon-refresh'>Recycle image</a>";
       function deleteImage( $item ) {
@@ -150,7 +151,7 @@
           var $list = $( "ul", $trash ).length ?
             $( "ul", $trash ) :
             $( "<ul class='gallery ui-helper-reset'/>" ).appendTo( $trash );
-   
+
           $item.find( "a.ui-icon-trash" ).remove();
           $item.append( recycle_icon ).appendTo( $list ).fadeIn(function() {
             $item
@@ -160,7 +161,7 @@
           });
         });
       }
-   
+
       // Image recycle function
       var trash_icon = "<a href='link/to/trash/script/when/we/have/js/off' title='Delete this image' class='ui-icon ui-icon-trash'>Delete image</a>";
       function recycleImage( $item ) {
@@ -178,13 +179,13 @@
             .fadeIn();
         });
       }
-   
+
       // Image preview function, demonstrating the ui.dialog used as a modal window
       function viewLargerImage( $link ) {
         var src = $link.attr( "href" ),
           title = $link.siblings( "img" ).attr( "alt" ),
           $modal = $( "img[src$='" + src + "']" );
-   
+
         if ( $modal.length ) {
           $modal.dialog( "open" );
         } else {
@@ -199,12 +200,12 @@
           }, 1 );
         }
       }
-   
+
       // Resolve the icons behavior with event delegation
       $( "ul.gallery > li" ).on( "click", function( event ) {
         var $item = $( this ),
           $target = $( event.target );
-   
+
         if ( $target.is( "a.ui-icon-trash" ) ) {
           deleteImage( $item );
         } else if ( $target.is( "a.ui-icon-zoomin" ) ) {
@@ -212,12 +213,60 @@
         } else if ( $target.is( "a.ui-icon-refresh" ) ) {
           recycleImage( $item );
         }
-   
+
         return false;
       });
     } );
     </script>
 <!--http://jqueryui.com/-->
+
+    <script type="text/javascript">
+      $(function(){
+        $("#search").keyup(function(){
+          var search = $("#search").val();
+          $.ajax({
+            type: "POST",
+            url: "application/ajax/searchtimeline.php",
+            data: {"search": search},
+            cache: false,
+            success: function(response){
+              $("#resSearch").html(response);
+            }
+          });
+          return false;
+        });
+      });
+      $(function(){
+        $("#searchfriends").keyup(function(){
+          var search = $("#searchfriends").val();
+          $.ajax({
+            type: "POST",
+            url: "application/ajax/searchfriends.php",
+            data: {"search": search},
+            cache: false,
+            success: function(response){
+              $("#resSearch").html(response);
+            }
+          });
+          return false;
+        });
+      });
+      $(function(){
+        $("#searchim").keyup(function(){
+          var search = $("#searchim").val();
+          $.ajax({
+            type: "POST",
+            url: "application/ajax/searchim.php",
+            data: {"search": search},
+            cache: false,
+            success: function(response){
+              $("#resSearch").html(response);
+            }
+          });
+          return false;
+        });
+      });
+    </script>
 
     <!-- Bootstrap moment-with-locales -->
     <script src="assets/tmp/bootstrap/js/moment-with-locales.min.js"></script>

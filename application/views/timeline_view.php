@@ -110,26 +110,18 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <div class="col-sm-12">
-                      <input type="text" class="form-control" id="inputName" name="serValue" value="<?php if($_POST['serValue']) echo $_POST['serValue']; ?>" placeholder="Ім'я або Прізвище" />
+                      <form action="" method="post" name="form" onsubmit="return false;">
+                        <input type='text' name='search' class="form-control" value='' id="search" placeholder="Ім'я або Прізвище">
+                      </form>
                     </div>
                  </div>
             </div>
           <div class="ui-widget ui-helper-clearfix">
             <div class="col-md-6">
-            <ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix">
-            <?php
-              foreach($data as $row)
-              { 
-            ?>
-              <li class="ui-widget-content ui-corner-tr">
-                <h5 class="ui-widget-header"><?=$row['name']?></h5>
-                <img src="<?=$row['ava']?>" alt="<?=$row['name']?>" width="150" height="150">
-                <a href="link/to/trash/script/when/we/have/js/off" title="Delete this image" class="ui-icon ui-icon-trash">Delete image</a>
-              </li>
-            <?php 
-              } 
-            ?>
-            </ul>   
+              <div id="resSearch">Почніть вводити запит</div>
+              <ul id="gallery resSearch" class="gallery ui-helper-reset ui-helper-clearfix">
+
+            </ul>
             </div>
             <div class="col-md-6">
             <div id="trash" class="ui-widget-content ui-state-default">
