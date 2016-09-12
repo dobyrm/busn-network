@@ -57,7 +57,7 @@
       </ul>
       <div class="tab-content">
         <div class="active tab-pane" id="message">
-          <div class="row">
+          <!--SEARSH PO DIALOGAH <div class="row">
             <div class="col-md-12">
               <form class="form-horizontal" action="" method="post" name="form" onsubmit="return false;">
                 <div class="form-group">
@@ -67,7 +67,7 @@
                 </div>
               </form>
             </div>
-          </div>
+          </div>-->
           <div class="table-responsive mailbox-messages">
           <div id="resSearch"></div>
           <table class="table table-hover table-striped">
