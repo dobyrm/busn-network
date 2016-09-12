@@ -119,9 +119,6 @@
           <div class="ui-widget ui-helper-clearfix">
             <div class="col-md-6">
               <div id="resSearch">Почніть вводити запит</div>
-              <ul id="gallery resSearch" class="gallery ui-helper-reset ui-helper-clearfix">
-
-            </ul>
             </div>
             <div class="col-md-6">
             <div id="trash" class="ui-widget-content ui-state-default">
