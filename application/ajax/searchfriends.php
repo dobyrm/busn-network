@@ -8,7 +8,7 @@ $search = stripslashes($search);
    }
 $db = mysqli_connect("localhost","root","","db_busn");
 //mysqli_select_db("db_busn",$db);
-mysqli_query($db,"SET NAMES UTF-8");
+mysqli_query($db,"SET NAMES utf8");
 
 $querys = "SELECT * FROM `bu_users_setings` WHERE `name` LIKE '%" . $search . "%' 
 			AND `hidden` = '0'";

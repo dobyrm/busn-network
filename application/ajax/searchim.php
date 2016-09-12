@@ -8,7 +8,7 @@ $search = stripslashes($search);
    }
 $db = mysqli_connect("localhost","root","","db_busn");
 //mysqli_select_db("db_busn",$db);
-mysqli_query($db,"SET NAMES UTF-8");
+mysqli_query($db,"SET NAMES utf8");
 $se = $_SESSION['auchUsersSetings']['id'];
 $querys = "SELECT * FROM `bu_users_setings`, `bu_im` WHERE `id_user_a` = `id_user`  AND `name` LIKE '%" . $search . "%'";
 $query = mysqli_query($db,$querys);
