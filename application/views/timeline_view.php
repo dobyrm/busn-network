@@ -112,12 +112,13 @@
                     <div class="col-sm-12">
                       <form action="" method="post" name="form" onsubmit="return false;">
                         <input type='text' name='search' class="form-control" value='' id="search" placeholder="Ім'я або Прізвище">
-                      </form>
+                      <!--</form>-->
                     </div>
                  </div>
             </div>
           <div class="ui-widget ui-helper-clearfix">
             <div class="col-md-6">
+              <div id="searchBottomAjax" class="btn btn-success">Клікніть щоб вибрати користувачів</div><br /><br />
               <div id="resSearch">Почніть вводити запит</div>
             </div>
             <div class="col-md-6">

@@ -107,7 +107,7 @@
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 
     <script>
-    $( function() {
+    function lineTotal() {
 
       // There's the gallery and the trash
       var $gallery = $( "#gallery" ),
@@ -216,7 +216,7 @@
 
         return false;
       });
-    } );
+    }
     </script>
 <!--http://jqueryui.com/-->
 
@@ -299,8 +299,10 @@
   </script>
 
     <script>
-
     $(document).ready(function(){
+      $("#searchBottomAjax").on('click', function() {
+        lineTotal();
+    });
       $("#inputNewMess").focus();
     });
 
