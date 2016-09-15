@@ -24,6 +24,7 @@ if(mysqli_num_rows($query) > 0){
                     <h5 class="ui-widget-header"><?=$row['name']?></h5>
                     <img src="<?=$row['ava']?>" alt="<?=$row['name']?>" width="150" height="150">
                     <a href="link/to/trash/script/when/we/have/js/off"  title="Delete this image" class="ui-icon ui-icon-trash">Delete image</a>
+                    <input type="hidden" name="userRead" value="<?=$row['id']?>" />
                 </li>
 <?php
     }while($row = mysqli_fetch_array($query));

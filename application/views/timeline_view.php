@@ -132,7 +132,7 @@
             <div class="form-group">
             <br />
               <div class="col-sm-offset-2 col-sm-10" style="text-align:right;">
-                <button type="submit" class="btn btn-primary">Публікувати</button>
+                <button type="submit" name="okOgoloshenya" value="okOgoloshenya" class="btn btn-primary">Публікувати</button>
               </div>
             </div>
           </form>
