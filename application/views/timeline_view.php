@@ -61,7 +61,7 @@
           <div class="form-group">
             <div class="col-sm-12">
             <label class="control-label" style="padding:7px;color:#555;background-color:#eee;">Оголошення</label>
-              <textarea class="form-control" id="inputExperience" placeholder="Оголошення користувачам" rows="10" style="resize: none">В 12.00 з'явитись всім деканам в 202 кабінет. Для розгляду матеріалів по конференції</textarea>
+              <textarea class="form-control" name="OgoText"  id="inputExperience" placeholder="Оголошення користувачам" rows="10" style="resize: none">В 12.00 з'явитись всім деканам в 202 кабінет. Для розгляду матеріалів по конференції</textarea>
             </div>
           </div>
           <div class="form-group">

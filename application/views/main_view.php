@@ -58,22 +58,37 @@
       <div class="tab-content">
         <div class="active tab-pane" id="activity">
           <!-- Post -->
+          <?php
+            foreach($data as $row)
+            { 
+              $id_user_select = explode(";", $row['id_user_select']);
+              foreach ($id_user_select as $key => $val) 
+              {
+                if($val == $_SESSION['userId'])
+                {
+
+                  if(date("d.m.Y") >= $row['date_in'] AND date("d.m.Y") <= $row['date_out'])
+                  {
+
+          ?>
           <div class="post">
             <div class="user-block">
-              <img class="img-circle img-bordered-sm" src="assets/tmp/dist/img/user1-128x128.jpg" alt="user image">
+              <img class="img-circle img-bordered-sm" src="<?=$row['ava'];?>" alt="<?=$row['name'];?>">
               <span class='username'>
-                <a href="#">Jonathan Burke Jr.</a>
+                <a href="#"><?=$row['name'];?></a>
               </span>
-              <span class='description'>Shared publicly - 7:30 PM today</span>
+              <span class='description'>Опубліковано - <?=$row['data'];?></span>
             </div><!-- /.user-block -->
             <p>
-              Lorem ipsum represents a long-held tradition for designers,
-              typographers and the like. Some people hate it and argue for
-              its demise, but others ignore the hate as they create awesome
-              tools to help create filler text for everyone from bacon lovers
-              to Charlie Sheen fans.
+              <?=$row['declared'];?>
             </p>
           </div><!-- /.post -->
+          <?php 
+                  }
+                }
+              }
+            } 
+          ?>
         </div><!-- /.tab-pane -->
       </div><!-- /.tab-content -->
     </div><!-- /.nav-tabs-custom -->

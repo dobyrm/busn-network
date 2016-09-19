@@ -29,6 +29,11 @@ define('WS_LANG_EMPTY_OLD_PASSWORD_INVALID',	'Старий пароль не в�
 
 define('WS_LANG_EMPTY_PASSWORD_DO_NOT_MATCH',	'Паролі не співпадають' );
 
+define('WS_LANG_EMPTY_USERREAD',     			'Виберіть користувача' );
+define('WS_LANG_EMPTY_DECLARED',     			'Введіть текст оголошення' );
+define('WS_LANG_EMPTY_CREATEFROM',     			'Введіть дату публікації' );
+define('WS_LANG_EMPTY_CREATETO',     			'Введіть дату закінчення публікації' );
+
 $lang_file_error = array( 
 					UPLOAD_ERR_INI_SIZE   => 'Размер файла больше разрешенного', 
 					UPLOAD_ERR_FORM_SIZE  => 'Размер файла превышает указанное значение в MAX_FILE_SIZE', 

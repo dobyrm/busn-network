@@ -11,12 +11,18 @@ class Controller_Timeline extends Controller
 	function action_index()
 	{
 
-		/*if($_POST['serValue'])
-			$data = $this->model->get_ser($_POST['serValue']);
-		else
-			$data = $this->model->get_data_friends();*/
+		if($_POST['okOgoloshenya'])
+			$info = $this->getTimelineRead();
 
-		$this->view->generate('timeline_view.php', 'template_view.php', $data);
+		$this->view->generate('timeline_view.php', 'template_view.php', $data, $info);
+
+	}
+
+	function getTimelineRead()
+	{
+
+		return $this->model->getNewDeclaredValidData($_POST['OgoText'], $_POST['createdFrom'], $_POST['createdTo'], $_POST['userRead']);
+		//Defaults::reDirect();
 
 	}
 	
