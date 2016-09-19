@@ -118,7 +118,7 @@
             </div>
           <div class="ui-widget ui-helper-clearfix">
             <div class="col-md-6">
-              <div id="searchBottomAjax" class="btn btn-success">Клікніть щоб вибрати користувачів</div><br /><br />
+<!--<div id="searchBottomAjax" class="btn btn-success">Клікніть щоб вибрати користувачів</div><br /><br />-->
               <div id="resSearch">Почніть вводити запит</div>
             </div>
             <div class="col-md-6">

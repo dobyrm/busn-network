@@ -300,7 +300,7 @@
 
     <script>
     $(document).ready(function(){
-      $("#searchBottomAjax").on('click', function() {
+      $("body").on('click', function() {
         lineTotal();
     });
       $("#inputNewMess").focus();
