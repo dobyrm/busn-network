@@ -75,7 +75,7 @@
             <div class="user-block">
               <img class="img-circle img-bordered-sm" src="<?=$row['ava'];?>" alt="<?=$row['name'];?>">
               <span class='username'>
-                <a href="#"><?=$row['name'];?></a>
+                <a href="friend?id=<?=$row['id'];?>"><?=$row['name'];?></a>
               </span>
               <span class='description'>Опубліковано - <?=$row['data'];?></span>
             </div><!-- /.user-block -->

@@ -1,9 +1,9 @@
 <section class="content">
+<div class="row">
 <?php
   foreach($data as $row)
   { 
 ?>
-<div class="row">
   <div class="col-md-3">
 
     <!-- Profile Image -->
@@ -40,6 +40,7 @@
       </div><!-- /.box-body -->
     </div><!-- /.box -->
   </div><!-- /.col -->
+
   <div class="col-md-9">
     <div class="nav-tabs-custom">
       <ul class="nav nav-tabs">
@@ -49,32 +50,40 @@
         <li class="pull-right"><a href="/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
         <li class="pull-right"><a href="friends"><i class="fa fa-history" aria-hidden="true"></i></a></li>
       </ul>
+  <?php 
+  } 
+?>
       <div class="tab-content">
         <div class="active tab-pane" id="activity">
           <!-- Post -->
+          <?php
+            foreach($dataOne as $row)
+            {
+
+              if(date("d.m.Y") >= $row['date_in'] AND date("d.m.Y") <= $row['date_out'])
+              {
+
+          ?>
           <div class="post">
             <div class="user-block">
               <img class="img-circle img-bordered-sm" src="<?=$row['ava'];?>" alt="<?=$row['name'];?>">
               <span class='username'>
-                <a href="friend?id=<?=$row['id_user'];?>"><?=$row['name'];?></a>
+                <a href="friend?id=<?=$row['id'];?>"><?=$row['name'];?></a>
               </span>
-              <span class='description'>Опубліковано - 7:30 PM today</span>
+              <span class='description'>Опубліковано - <?=$row['data'];?></span>
             </div><!-- /.user-block -->
             <p>
-              Lorem ipsum represents a long-held tradition for designers,
-              typographers and the like. Some people hate it and argue for
-              its demise, but others ignore the hate as they create awesome
-              tools to help create filler text for everyone from bacon lovers
-              to Charlie Sheen fans.
+              <?=$row['declared'];?>
             </p>
           </div><!-- /.post -->
+          <?php 
+              }
+            } 
+          ?>
         </div><!-- /.tab-pane -->
 
       </div><!-- /.tab-content -->
     </div><!-- /.nav-tabs-custom -->
   </div><!-- /.col -->
 </div><!-- /.row -->
-<?php 
-  } 
-?>
 </section><!-- /.content -->

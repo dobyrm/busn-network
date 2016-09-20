@@ -11,6 +11,8 @@ class Controller_Friend extends Controller
 	function action_index()
 	{	
 		$data = $this->model->get_data();
-		$this->view->generate('friend_view.php', 'template_view.php', $data);
+		$timeline = $this->model->getDataTimeline($_GET['id']);
+
+		$this->view->generate('friend_view.php', 'template_view.php', $data, $timeline);
 	}
 }
