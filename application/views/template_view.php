@@ -231,6 +231,7 @@
             cache: false,
             success: function(response){
               $("#resSearch").html(response);
+              lineTotal();
             }
           });
           return false;
@@ -300,9 +301,9 @@
 
     <script>
     $(document).ready(function(){
-      $("body").on('click', function() {
+      /*$("body").on('click', function() {
         lineTotal();
-    });
+      });*/
       $("#inputNewMess").focus();
     });
 
