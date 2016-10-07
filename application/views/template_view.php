@@ -318,7 +318,7 @@
       $(function(){
         $(".direct-chat-messages").animate({
           scrollTop: $('#bms').offset().top
-        }, 1000);
+        }, 0);
       });
 
     $(".remembPassAuch").click(function() {
