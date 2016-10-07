@@ -14,7 +14,7 @@ class Model_Adduser extends Model
 		}
 	}
 
-	public function get_valid_data($login, $pass, $name, $posada, $position)
+	public function get_valid_data($login, $pass, $name, $posada, $position, $serFac, $serKaf)
 	{
 		
 		if($this->get_valid_data_login_db($login) == true)
@@ -34,10 +34,16 @@ class Model_Adduser extends Model
         if(empty($position)) 
             $info[] = WS_LANG_EMPTY_POSITION;
 
+        if(empty($serFac)) 
+            $info[] = WS_LANG_EMPTY_SERFAC;
+
+        if(empty($serKaf)) 
+            $info[] = WS_LANG_EMPTY_SERKAF;
+
 		if(empty($info))
         {
 			
-			$this->get_read_data($login, $pass, $name, $posada, $position);
+			$this->get_read_data($login, $pass, $name, $posada, $position, $serFac, $serKaf);
 			return $infoSucces = WS_LANG_SUCCES_ADD_USER;
 
 		}
@@ -45,7 +51,7 @@ class Model_Adduser extends Model
 			return $info = Defaults::getInfo($info);
 	}
 
-	public function get_read_data($login, $pass, $name, $posada, $position)
+	public function get_read_data($login, $pass, $name, $posada, $position, $serFac, $serKaf)
 	{
 		mysqlQuery("INSERT INTO `". WS_DBPREFIX . 'users' ."`
 		                    	SET `login`		= '". $login ."',
@@ -53,11 +59,11 @@ class Model_Adduser extends Model
 		                    		`dataentry`	= NOW()"
 	                     	);
 
-		$this->get_read_position($name, $posada, $position);
+		$this->get_read_position($name, $posada, $position, $serFac, $serKaf);
 
 	}
 
-	public function get_read_position($name, $posada, $position)
+	public function get_read_position($name, $posada, $position, $serFac, $serKaf)
 	{
 		$maxIdMess = $this->get_data_end_row();
 
@@ -74,7 +80,9 @@ class Model_Adduser extends Model
 		                    		`note`		=	'',
 		                    		`ava`		=	'assets/image/users/ava/noAva.jpg',
 		                    		`position`	= 	'". $position ."',
-		                    		`hidden`	=	'0'"
+		                    		`hidden`	=	'0',
+		                    		`serFac`			=	'". $serFac ."',
+		                    		`serKaf`			=	'". $serKaf ."'"
 	                     	);
 	}
 

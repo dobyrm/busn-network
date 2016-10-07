@@ -84,6 +84,16 @@
               </div>
             </div>
             <div class="form-group">
+              <div class="col-sm-6">
+                <label class="control-label" style="padding:7px;color:#555;background-color:#eee;">Факультет</label>
+                <input type="text" class="form-control" name="serFac" placeholder="Факультет">
+              </div>
+              <div class="col-sm-6">
+                <label class="control-label" style="padding:7px;color:#555;background-color:#eee;">Кафедра</label>
+                <input type="text" class="form-control" name="serKaf" placeholder="Кафедра">
+              </div>
+            </div>
+            <div class="form-group">
               <div class="col-sm-12">
                 <label class="control-label" style="padding:7px;color:#555;background-color:#eee;">Позиція</label>
                 <select class="form-control" name="position">

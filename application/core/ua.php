@@ -21,6 +21,9 @@ define('WS_LANG_EMPTY_NAME',     				'Введіть імя' );
 define('WS_LANG_EMPTY_POSADA',     				'Введіть посаду' );
 define('WS_LANG_EMPTY_POSITION',     			'Виберіть позицію' );
 
+define('WS_LANG_EMPTY_SERFAC',     				'Введіть Факультет' );
+define('WS_LANG_EMPTY_SERKAF',     				'Введіть Кафедру' );
+
 define('WS_LANG_EMPTY_FORM',     				'Заповніть форму' );
 
 define('WS_LANG_FATAL_ERROR',     				'Фатальна помилка' );

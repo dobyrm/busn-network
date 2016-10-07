@@ -23,7 +23,7 @@ class Controller_Adduser extends Controller
 
 	function action_form_valid_data()
 	{	
-		return $this->model->get_valid_data($_POST['login'], $_POST['pass'], $_POST['name'], $_POST['posada'], $_POST['position']);
+		return $this->model->get_valid_data($_POST['login'], $_POST['pass'], $_POST['name'], $_POST['posada'], $_POST['position'], $_POST['serFac'], $_POST['serKaf']);
 	}
 	
 }

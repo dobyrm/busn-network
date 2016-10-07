@@ -11,7 +11,10 @@ $db = mysqli_connect("localhost","root","","db_busn");
 mysqli_query($db,"SET NAMES utf8");
 
 $querys = "SELECT * FROM `bu_users_setings` WHERE `name` LIKE '%" . $search . "%' 
-			AND `hidden` = '0'";
+            OR `posada` LIKE '%" . $search . "%'
+            OR `serFac` LIKE '%" . $search . "%'
+            OR `serKaf` LIKE '%" . $search . "%'
+            AND `hidden` = '0'";
 $query = mysqli_query($db,$querys);
 if(mysqli_num_rows($query) > 0){
     $row = mysqli_fetch_array($query);
