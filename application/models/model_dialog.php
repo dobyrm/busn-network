@@ -45,10 +45,10 @@ class Model_Dialog extends Model
 		if(empty($info))
         {
         	$a = mysqlQuery("INSERT INTO `". WS_DBPREFIX . 'im' ."`
-                     SET 	`id_user_a` = '". $_SESSION['auchUsersSetings']['id'] ."',
+                     SET 	`id_user_a` = '". $_COOKIE["userID"] ."',
                      		`id_user_b` = '". $_GET['id'] ."',
                          	`text`   	= '". $message ."',
-                         	`id_dialog`	= '". $_SESSION['auchUsersSetings']['id'].$_GET['id']  ."',
+                         	`id_dialog`	= '". $_COOKIE["userID"].$_GET['id']  ."',
                          	`data` 		= NOW()"
                      );
 
@@ -56,7 +56,7 @@ class Model_Dialog extends Model
                      SET 	`id_user_a` = '". $_SESSION['auchUsersSetings']['id'] ."',
                      		`id_user_b` = '". $_GET['id'] ."',
                          	`text`   	= '". $message ."',
-                         	`id_dialog`	= '". $_GET['id'].$_SESSION['auchUsersSetings']['id']  ."',
+                         	`id_dialog`	= '". $_GET['id'].$_COOKIE["userID"]  ."',
                          	`data` 		= NOW()"
                      );
 
@@ -64,17 +64,17 @@ class Model_Dialog extends Model
         	$maxIdMess = $this->get_data_end_row();
 
         	$query =  mysqlQuery("SELECT `id_user_a`, `id_user_b` FROM `". WS_DBPREFIX . 'dialogs' ."`
-        			WHERE id_user_a = '". $_SESSION['auchUsersSetings']['id'] ."' 
+        			WHERE id_user_a = '". $_COOKIE["userID"] ."' 
         			AND   id_user_b = '". $_GET['id'] ."'");
 
         	if(mysqli_num_rows($query) > 0)
         	{
         		
                 $updateDialogs = mysqlQuery("UPDATE `". WS_DBPREFIX . 'dialogs' ."`
-                            SET `id_user_a` = '". $_SESSION['auchUsersSetings']['id'] ."',
+                            SET `id_user_a` = '". $_COOKIE["userID"] ."',
                                 `id_user_b` = '". $_GET['id'] ."',
                                 `id_end_mess`       = '". $maxIdMess ."'
-                    WHERE `id_user_a` = ". $_SESSION['userID'] ." AND `id_user_b` = ". $_GET['id'] .""
+                    WHERE `id_user_a` = ". $_COOKIE["userID"] ." AND `id_user_b` = ". $_GET['id'] .""
                      );
 
         	}
@@ -82,7 +82,7 @@ class Model_Dialog extends Model
         	{
         		
                 $insertDialogs = mysqlQuery("INSERT INTO `". WS_DBPREFIX . 'dialogs' ."`
-                            SET `id_user_a` = '". $_SESSION['auchUsersSetings']['id'] ."',
+                            SET `id_user_a` = '". $_COOKIE["userID"] ."',
                                 `id_user_b` = '". $_GET['id'] ."',
                                 `id_end_mess`       = '". $maxIdMess ."'"
                      );
