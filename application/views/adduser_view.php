@@ -86,11 +86,27 @@
             <div class="form-group">
               <div class="col-sm-6">
                 <label class="control-label" style="padding:7px;color:#555;background-color:#eee;">Факультет</label>
-                <input type="text" class="form-control" name="serFac" placeholder="Факультет">
+                <select class="form-control" name="serFac">
+                  <option value="Економічний">Економічний</option>
+                  <option value="Юридичний">Юридичний</option>
+                  <option value="КСіТ">КСіТ</option>
+                </select>
               </div>
               <div class="col-sm-6">
                 <label class="control-label" style="padding:7px;color:#555;background-color:#eee;">Кафедра</label>
-                <input type="text" class="form-control" name="serKaf" placeholder="Кафедра">
+                <select class="form-control" name="serKaf">
+                  <option value="Економіки і підприємництва">Економіки і підприємництва</option>
+                  <option value="Фінансів">Фінансів</option>
+                  <option value="Обліку і аудиту">Обліку і аудиту</option>
+                  <option></option>
+                  <option value="Цивільно-правових дисциплін">Цивільно-правових дисциплін</option>
+                  <option value="Кримінально-правових дисциплін">Кримінально-правових дисциплін</option>
+                  <option value="Професійних та спеціальних правових дисциплін">Професійних та спеціальних правових дисциплін</option>
+                  <option></option>
+                  <option value="Філологічних та суспільних дисциплін">Філологічних та суспільних дисциплін</option>
+                  <option value="Комп'ютерних систем і технологій">Комп'ютерних систем і технологій</option>
+                  <option value="Автоматизованих систем управління">Автоматизованих систем управління</option>
+                </select>
               </div>
             </div>
             <div class="form-group">
