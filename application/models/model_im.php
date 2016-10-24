@@ -16,7 +16,7 @@ class Model_Main extends Model
 		return  mysqlQuery("SELECT * FROM `". WS_DBPREFIX . 'im' ."`,`". WS_DBPREFIX . 'dialogs' ."`,`". WS_DBPREFIX . 'users_setings' ."` 
 			WHERE ". WS_DBPREFIX . 'dialogs' .".id_user_a = ". WS_DBPREFIX . 'users_setings' .".id_user 
 			AND ". WS_DBPREFIX . 'dialogs' .".id_end_mess = ". WS_DBPREFIX . 'im' .".id_mess
-			AND ". WS_DBPREFIX . 'dialogs' .".id_user_b = ".$_SESSION['auchUsersSetings']['id']."
+			AND ". WS_DBPREFIX . 'dialogs' .".id_user_b = ".$_COOKIE["userID"]."
 			ORDER BY ". WS_DBPREFIX . 'dialogs' .".id DESC");
 	}
 

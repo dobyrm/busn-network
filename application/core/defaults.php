@@ -23,6 +23,7 @@ class Defaults
         setcookie ("pass", "", time()+7*24*60*60);
         setcookie ("auch", "", time()+7*24*60*60);
         setcookie ("auchUsersId", "", time()+7*24*60*60);
+        setcookie ("userID", "", time()+7*24*60*60);
         session_destroy();
     }
 

@@ -41,6 +41,7 @@ class Model_Enter extends Model
                     );
 
 			$_SESSION['userID'] = $data['id'];
+			setcookie("userID", $data['id'], time()+7*24*60*60);
 			
 			$this->get_data_user_setings($data['id']);
 		}
