@@ -22,6 +22,7 @@ if(mysqli_num_rows($query) > 0){
     <ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix">
     <?php
     do{
+        $arr_id_users .= $row['id'].' ';
         ?>
                 <li class="ui-widget-content ui-corner-tr">
                     <h5 class="ui-widget-header"><?=$row['name']?></h5>
@@ -32,6 +33,9 @@ if(mysqli_num_rows($query) > 0){
 <?php
     }while($row = mysqli_fetch_array($query));
     ?>
+    <li class="ui-widget-content ui-corner-tr">
+        <button class="btn btn-primary" id="timeline_public_all">Публікувати всім</button>
+    </li>
     </ul>
 <?php
 }else{
