@@ -33,10 +33,8 @@ if(mysqli_num_rows($query) > 0){
 <?php
     }while($row = mysqli_fetch_array($query));
     ?>
-    <li class="ui-widget-content ui-corner-tr">
-        <button class="btn btn-primary" id="timeline_public_all">Публікувати всім</button>
-    </li>
     </ul>
+    <button type="submit" name="okOgoloshenya" value="okOgoloshenya" class="btn btn-primary">Публікувати всім</button>
 <?php
 }else{
     echo "Немає результатів";
