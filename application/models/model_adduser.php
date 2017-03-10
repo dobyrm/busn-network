@@ -7,16 +7,17 @@ class Model_Adduser extends Model
 		$res = mysqlQuery("SELECT `login` FROM `". WS_DBPREFIX . 'users' ."`");
 		while($row = mysqli_fetch_assoc($res))
 		{
-			if ($row['login'] == $login)
-				return true;
-			else
-				return false;
+			foreach ($row as $key => $val){
+				if($val == $login){
+					return true;
+				}
+			}
 		}
 	}
 
 	public function get_valid_data($login, $pass, $name, $posada, $position, $serFac, $serKaf)
 	{
-		
+
 		if($this->get_valid_data_login_db($login) == true)
 			$info[] = WS_LANG_INVALID_SAME_LOGINS;
 

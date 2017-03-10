@@ -11,8 +11,16 @@ class Controller_Timeline extends Controller
 	function action_index()
 	{
 
-		if($_POST['okOgoloshenya'])
+		if($_POST['okOgoloshenya']){
+			
+			//To BD
 			$info = $this->getTimelineRead();
+
+			//To email
+			$this->getEmailTimeLineUsers($_POST['userRead']);
+
+			Defaults::reDirect();
+		}
 
 		$this->view->generate('timeline_view.php', 'template_view.php', $data, $info);
 
@@ -20,10 +28,24 @@ class Controller_Timeline extends Controller
 
 	function getTimelineRead()
 	{
-
 		return $this->model->getNewDeclaredValidData($_POST['OgoText'], $_POST['createdFrom'], $_POST['createdTo'], $_POST['userRead']);
-		//Defaults::reDirect();
 
+	}
+
+	function getEmailTimeLineUsers($userRead)
+	{
+		foreach ($userRead as $key => $val) 
+		{
+			$id_user_select .= $val .'\',\'';
+		}
+
+		$resMail = $this->model->getUsersSelectMail($id_user_select);
+
+		foreach($resMail as $row)
+        {
+        	$emailUsersMail .= $row['email'].",";
+        }
+        Defaults::sendMail($emailUsersMail);
 	}
 	
 }

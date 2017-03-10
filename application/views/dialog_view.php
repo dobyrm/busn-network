@@ -84,7 +84,11 @@
                 </div><!-- /.direct-chat-info -->
                 <a href="friend?id=<?=$row['id_user_a'];?>"><img class="direct-chat-img" src="<?=$row['ava'];?>" alt="<?=$row['name'];?>"></a><!-- /.direct-chat-img -->
                 <div class="direct-chat-text">
-                  <?=$row['text'];?>
+                  <?php
+                    $phrases  = ['Хахаха', 'Хаха', 'Ха', 'Хуй', 'підар', 'Підар', 'Уйобок', 'козел', 'Козел', 'підарас', 'Підарас'];
+                    $emojis   = ["\u{1F606}", "\u{1F600}", "\u{263A}", "\u{1F637}", "\u{1F637}", "\u{1F637}", "\u{1F637}", "\u{1F637}", "\u{1F637}", "\u{1F637}"];
+                  ?>
+                  <?=str_replace($phrases, $emojis, $row['text']);?>
                 </div><!-- /.direct-chat-text -->
               </div><!-- /.direct-chat-msg -->
               <?php 

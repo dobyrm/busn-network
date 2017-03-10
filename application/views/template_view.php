@@ -56,7 +56,7 @@
     .ui-icon-refresh {
     background-position: -18px -190px;
     }
-   
+
     #trash { min-height: 18em;}
     #trash h4 { line-height: 16px; margin: 0 0 0.4em; }
     #trash h4 .ui-icon { float: left; }
@@ -79,7 +79,7 @@
            immediately after the control sidebar -->
       <div class="control-sidebar-bg"></div>
     </div><!-- ./wrapper -->
-<? if($_SESSION['auchUsersSetings']['position'] == 0) { ?>
+<? if($_SESSION['auchUsersSetings']['position'] == 4 OR $_SESSION['auchUsersSetings']['position'] == 3) { ?>
 <aside class="control-sidebar control-sidebar-dark">
   <!-- Tab panes -->
   <div class="tab-content">
@@ -93,6 +93,15 @@
             <div class="menu-info">
               <h4 class="control-sidebar-subheading">Регістрація</h4>
               <p>Зареєструвати користувача на сайті</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="editadmuser">
+            <i class="menu-icon fa fa-user bg-yellow"></i>
+            <div class="menu-info">
+              <h4 class="control-sidebar-subheading">Редагування</h4>
+              <p>Редагувати користувачів сайту</p>
             </div>
           </a>
         </li>
@@ -243,6 +252,21 @@
           $.ajax({
             type: "POST",
             url: "application/ajax/searchfriends.php",
+            data: {"search": search},
+            cache: false,
+            success: function(response){
+              $("#resSearch").html(response);
+            }
+          });
+          return false;
+        });
+      });
+      $(function(){
+        $("#searchusers").keyup(function(){
+          var search = $("#searchusers").val();
+          $.ajax({
+            type: "POST",
+            url: "application/ajax/searchusers.php",
             data: {"search": search},
             cache: false,
             success: function(response){

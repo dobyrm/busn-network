@@ -47,7 +47,7 @@
       <ul class="nav nav-tabs">
         <li><a href="/">Оголошення</a></li>
         <li><a href="timeline">Лінія</a></li>
-        <li class="active"><a href="im">Повідомлення</a></li>
+        <li><a href="im">Повідомлення</a></li>
         <li><a href="friends">Користувачі</a></li>
         <li><a href="settings">Налаштування</a></li>
         <? if($_SESSION['auchUsersSetings']['position'] == 4 OR $_SESSION['auchUsersSetings']['position'] == 3) { ?>
@@ -56,45 +56,39 @@
         <li class="pull-right"><a href="?exit"><i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
       </ul>
       <div class="tab-content">
-        <div class="active tab-pane" id="message">
-          <!--SEARSH PO DIALOGAH <div class="row">
+        <div class="active tab-pane" id="friends">
+          <div class="row">
             <div class="col-md-12">
               <form class="form-horizontal" action="" method="post" name="form" onsubmit="return false;">
                 <div class="form-group">
-                  <div class="col-sm-12">
-                    <input type="text" class="form-control" id="searchim" name="serValue" value="<?php if($_POST['serValue']) echo $_POST['serValue']; ?>" placeholder="Ім'я або Прізвище">
-                  </div>
-                </div>
+                    <div class="col-sm-12">
+                      <input type="text" class="form-control" id="searchusers" name="serValue" value="<?php if($_POST['serValue']) echo $_POST['serValue']; ?>" placeholder="Ім'я або Прізвище">
+                    </div>
+                 </div>
               </form>
             </div>
-          </div>-->
-          <div class="table-responsive mailbox-messages">
-          <div id="resSearch"></div>
-          <table class="table table-hover table-striped">
-            <tbody>
-            <?php
-              foreach($data as $row)
-              { 
-            ?>
-                <tr class="hiddenAjax">
-                  <td class="mailbox-star"><a><i class="fa fa-star text-yellow"></i></a></td>
-                  <td class="mailbox-name"><a href="dialog?id=<?=$row['id_user'];?>"><?=$row['name'];?></a></td>
-                  <td class="mailbox-subject"><?=substr($row['text'],0,100);?></td>
-                  <td class="mailbox-attachment"></td>
-                  <td class="mailbox-date"><?=$row['data'];?></td>
-                  <td class="mailbox-date">
-                    <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
-                    <input type="hidden" name="dialogID" value="<?=$row['id_dialog'];?>">
-                    <button type="submit" name="deleteMessage" value="deleteMessage" class="btn btn-primary" style="    padding:0px 5px!important;"><i class='fa fa-times'></i></button>
-                    </form>
-                  </td>
-                </tr>
-            <?php 
-              } 
-            ?>
-            </tbody>
-          </table><!-- /.table -->
-        </div>
+          </div>
+          <div class="row">
+              <div id="resSearch"></div>
+          <?php
+            foreach($data as $row)
+            {
+          ?>
+          <div class="col-md-3 hiddenAjax">
+            <!-- Profile Image -->
+            <div class="box box-primary">
+              <div class="box-body box-profile">
+                <img class="profile-user-img img-responsive img-circle" src="<?=$row['ava'];?>" alt="<?=$row['name'];?>">
+                <a href="editadmuser?id=<?=$row['id_user'];?>"><h3 class="profile-username text-center"><?=$row['name'];?></h3></a>
+                <p class="text-muted text-center"><?=$row['posada'];?></p>
+              </div><!-- /.box-body -->
+          </div><!-- /.box -->
+            </div><!-- /.col -->
+          <?php
+            }
+          ?>
+      </div>
+
         </div><!-- /.tab-pane -->
       </div><!-- /.tab-content -->
     </div><!-- /.nav-tabs-custom -->

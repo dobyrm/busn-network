@@ -71,4 +71,32 @@ class Defaults
         header('location: '. str_replace("/index.php", "", $_SERVER['HTTP_REFERER']));
         exit();
     }
+
+    function sendMail($dataMail)
+    {
+        /*
+        $subject = $subject."<a href='".WS_HOST."'>".WS_HOST."</a>";
+        $message = $message."<a href='".WS_HOST."'>".WS_HOST."</a>";
+        $headers = 'From: bukuniver@bukuniver.edu.ua' . "\r\n" .
+        'Reply-To: bukuniver@bukuniver.edu.ua' . "\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+
+        mail($dataMail, $subject, $message, $headers);
+        */
+        $to = $dataMail; //Почта получателя, через запятую можно указать сколько угодно адресов
+        $subject = WS_LANG_MAIL_TL_SUB; //Загаловок сообщения
+        $mess = '
+                <html>
+                    <head>
+                        <title>'.$subject.'</title>
+                    </head>
+                    <body>                      
+                        <p>'.WS_LANG_MAIL_TL_MES.'<a href='.WS_HOST.'>'.WS_HOST.'</a></p>                        
+                    </body>
+                </html>'; //Текст нащего сообщения можно использовать HTML теги
+        $headers  = "Content-type: text/html; charset=utf-8 \r\n"; //Кодировка письма
+        $headers .= "From: bukuniver@bukuniver.edu.ua\r\n"; //Наименование и почта отправителя
+        $headers = iconv("UTF-8", "CP1251", $headers);
+        mail($to, $subject, $mess, $headers); //Отправка письма с помощью функции mail
+    }
 }

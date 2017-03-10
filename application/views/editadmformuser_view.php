@@ -57,12 +57,16 @@
       </ul>
       <div class="tab-content">
         <div class="active tab-pane" id="settings">
-          <p class="SettingsView">Регістрація нового користувача</p>
+          <p class="SettingsView">Редагування користувача</p>
+          <?php
+            foreach($data as $row)
+            {
+          ?>
           <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
             <div class="form-group">
               <div class="col-sm-12">
                 <label class="control-label" style="padding:7px;color:#555;background-color:#eee;">Логін</label>
-                <input type="text" class="form-control" name="login" placeholder="Логін">
+                <input type="text" class="form-control" name="login" value="<?=$row['login']?>" placeholder="Логін">
               </div>
             </div>
             <div class="form-group">
@@ -74,19 +78,20 @@
             <div class="form-group">
               <div class="col-sm-12">
                 <label class="control-label" style="padding:7px;color:#555;background-color:#eee;">Ім'я</label>
-                <input type="text" class="form-control" name="name" placeholder="Ім'я">
+                <input type="text" class="form-control" name="name" value="<?=$row['name']?>" placeholder="Ім'я">
               </div>
             </div>
             <div class="form-group">
               <div class="col-sm-12">
                 <label class="control-label" style="padding:7px;color:#555;background-color:#eee;">Посада</label>
-                <input type="text" class="form-control" name="posada" placeholder="Посада">
+                <input type="text" class="form-control" name="posada" value="<?=$row['posada']?>" placeholder="Посада">
               </div>
             </div>
             <div class="form-group">
               <div class="col-sm-6">
                 <label class="control-label" style="padding:7px;color:#555;background-color:#eee;">Факультет</label>
                 <select class="form-control" name="serFac">
+                  <option value="<?=$row['serFac']?>"><?=$row['serFac']?></option>
                   <option value="Економічний">Економічний</option>
                   <option value="Юридичний">Юридичний</option>
                   <option value="КСіТ">КСіТ</option>
@@ -95,6 +100,7 @@
               <div class="col-sm-6">
                 <label class="control-label" style="padding:7px;color:#555;background-color:#eee;">Кафедра</label>
                 <select class="form-control" name="serKaf">
+                  <option value="<?=$row['serKaf']?>"><?=$row['serKaf']?></option>
                   <option value="Економіки і підприємництва">Економіки і підприємництва</option>
                   <option value="Фінансів">Фінансів</option>
                   <option value="Обліку і аудиту">Обліку і аудиту</option>
@@ -113,6 +119,18 @@
               <div class="col-sm-12">
                 <label class="control-label" style="padding:7px;color:#555;background-color:#eee;">Позиція</label>
                 <select class="form-control" name="position">
+                  <?php
+                    if($row['position'] == 1)
+                      echo '<option value="1">Викладач</option>';
+                    elseif($row['position'] == 2)
+                      echo '<option value="2">Студент</option>';
+                    elseif($row['position'] == 3)
+                      echo '<option value="3">Декан</option>';
+                    elseif($row['position'] == 4)
+                      echo '<option value="4">Адміністратор</option>';
+                    else
+                      echo '<option>Виберіть позицію користувача на сайті</option>';
+                  ?>
                   <option value="3">Декан</option>
                   <option value="1">Викладач</option>
                   <option value="2">Студент</option>
@@ -123,10 +141,14 @@
             </div>
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-10" style="text-align:right;">
-                <button type="submit" name="addUser" value="addUser" class="btn btn-primary">Додати</button>
+              <button type="submit" name="dellAdmformUser" value="dellAdmformUser" class="btn btn-danger">Видалити</button>
+                <button type="submit" name="editAdmformUser" value="editAdmformUser" class="btn btn-primary">Редагувати</button>
               </div>
             </div>
           </form>
+          <?
+            }
+          ?>
         </div><!-- /.tab-pane -->
       </div><!-- /.tab-content -->
     </div><!-- /.nav-tabs-custom -->

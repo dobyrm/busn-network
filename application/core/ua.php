@@ -1,5 +1,6 @@
 <?php
 
+define('WS_LANG_EMPTY_LOGIN',					'Введіть логін' );
 define('WS_LANG_EMPTY_PASSWORD', 				'Введіть пароль');
 define('WS_LANG_EMPTY_PASSWORD_NEW', 			'Введіть новий пароль');
 define('WS_LANG_SHORT_PASSWORD', 				'Пароль не надійний. Мінімум 4 символа' );
@@ -16,13 +17,15 @@ define('WS_LANG_EMPTY_TEXT',     				'Поле пусте' );
 define('WS_LANG_SUCCES',     					'Зміни пройшли успішно' );
 
 define('WS_LANG_SUCCES_ADD_USER',     			'Користувача додано' );
+define('WS_LANG_SUCCES_EDIT_USER',     			'Користувача змінено' );
+
 
 define('WS_LANG_EMPTY_NAME',     				'Введіть імя' );
 define('WS_LANG_EMPTY_POSADA',     				'Введіть посаду' );
 define('WS_LANG_EMPTY_POSITION',     			'Виберіть позицію' );
 
-define('WS_LANG_EMPTY_SERFAC',     				'Введіть Факультет' );
-define('WS_LANG_EMPTY_SERKAF',     				'Введіть Кафедру' );
+define('WS_LANG_EMPTY_SERFAC',     				'Виберіть Факультет' );
+define('WS_LANG_EMPTY_SERKAF',     				'Виберіть Кафедру' );
 
 define('WS_LANG_EMPTY_FORM',     				'Заповніть форму' );
 
@@ -36,6 +39,9 @@ define('WS_LANG_EMPTY_USERREAD',     			'Виберіть користувача
 define('WS_LANG_EMPTY_DECLARED',     			'Введіть текст оголошення' );
 define('WS_LANG_EMPTY_CREATEFROM',     			'Введіть дату публікації' );
 define('WS_LANG_EMPTY_CREATETO',     			'Введіть дату закінчення публікації' );
+
+define('WS_LANG_MAIL_TL_SUB',					'Оголошення' );
+define('WS_LANG_MAIL_TL_MES',					'У вас нове оголошення, перейдіть по посиланню для перегляду ' );
 
 $lang_file_error = array( 
 					UPLOAD_ERR_INI_SIZE   => 'Размер файла больше разрешенного', 

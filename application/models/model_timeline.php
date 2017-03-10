@@ -39,7 +39,6 @@ class Model_Timeline extends Model
         if(empty($info))
         {
 			$this->get_read_data($id_user_select, $OgoText, $createdFrom, $createdTo);
-			Defaults::reDirect();
 		}
 		else
 			return $info = Defaults::getInfo($info);
@@ -56,6 +55,12 @@ class Model_Timeline extends Model
                          	`date_out`   		= '". $createdTo ."',
                          	`data` 				= NOW()"
                      );
+	}
+
+	public function getUsersSelectMail($id_user)
+	{
+		return mysqlQuery("SELECT `email` FROM `". WS_DBPREFIX . 'users_setings' ."`
+			WHERE 	". WS_DBPREFIX . 'users_setings' .".id_user IN ('$id_user')");
 	}
 	
 }

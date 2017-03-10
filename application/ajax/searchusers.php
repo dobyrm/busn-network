@@ -10,7 +10,7 @@ $db = mysqli_connect("wstudi01.mysql.ukraine.com.ua","wstudi01_busn","6sahjvsy",
 //mysqli_select_db("db_busn",$db);
 mysqli_query($db,"SET NAMES utf8");
 
-$querys = "SELECT * FROM `bu_users_setings` WHERE `name` LIKE '%" . $search . "%' 
+$querys = "SELECT * FROM `bu_users_setings` WHERE `name` LIKE '%" . $search . "%'
 			AND `hidden` = '0'";
 $query = mysqli_query($db,$querys);
 if(mysqli_num_rows($query) > 0){
@@ -25,7 +25,7 @@ if(mysqli_num_rows($query) > 0){
             <div class="box box-primary">
                 <div class="box-body box-profile">
                     <img class="profile-user-img img-responsive img-circle" src="<?=$row['ava'];?>" alt="<?=$row['name'];?>">
-                    <a href="friend?id=<?=$row['id_user'];?>"><h3 class="profile-username text-center"><?=$row['name'];?></h3></a>
+                    <a href="editadmuser?id=<?=$row['id_user'];?>"><h3 class="profile-username text-center"><?=$row['name'];?></h3></a>
                     <p class="text-muted text-center"><?=$row['posada'];?></p>
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
