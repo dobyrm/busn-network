@@ -4,7 +4,16 @@
     <!-- Profile Image -->
     <div class="box box-primary">
       <div class="box-body box-profile">
-        <img class="profile-user-img img-responsive img-circle" src="<?=$_SESSION['auchUsersSetings']['ava'];?>" alt="<?=$_SESSION['auchUsersSetings']['name'];?>">
+        <?php
+          $img = $_SESSION['auchUsersSetings']['ava'];
+          if (file_exists($img)) { ?>
+              <img class="profile-user-img img-responsive img-circle" src="<?=$_SESSION['auchUsersSetings']['ava'];?>" alt="<?=$_SESSION['auchUsersSetings']['name'];?>">
+          <?php
+          } else { ?>
+              <img class="profile-user-img img-responsive img-circle" src="http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image" alt="<?=$_SESSION['auchUsersSetings']['name'];?>">
+          <?php
+          }
+        ?>
         <h3 class="profile-username text-center"><?=$_SESSION['auchUsersSetings']['name'];?></h3>
         <p class="text-muted text-center"><?=$_SESSION['auchUsersSetings']['posada'];?></p>
 
@@ -85,7 +94,7 @@
                   <td class="mailbox-date">
                     <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="dialogID" value="<?=$row['id_dialog'];?>">
-                    <button type="submit" name="deleteMessage" value="deleteMessage" class="btn btn-primary" style="    padding:0px 5px!important;"><i class='fa fa-times'></i></button>
+                    <button type="submit" name="deleteMessage" value="deleteMessage" class="btn btn-primary" style="padding:0px 5px!important;"><i class='fa fa-times'></i></button>
                     </form>
                   </td>
                 </tr>

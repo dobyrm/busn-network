@@ -6,7 +6,7 @@ $search = stripslashes($search);
    if($search == ''){
        exit("<p align='center'>Почніть вводити запит</p>");
    }
-$db = mysqli_connect("wstudi01.mysql.ukraine.com.ua","wstudi01_busn","6sahjvsy","wstudi01_busn");
+$db = mysqli_connect("localhost","root","","db_busn");
 //mysqli_select_db("db_busn",$db);
 mysqli_query($db,"SET NAMES utf8");
 

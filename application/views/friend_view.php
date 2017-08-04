@@ -9,7 +9,16 @@
     <!-- Profile Image -->
     <div class="box box-primary">
       <div class="box-body box-profile">
-        <img class="profile-user-img img-responsive img-circle" src="<?=$row['ava'];?>" alt="<?=$row['name'];?>">
+      <?php
+        $img = $row['ava'];
+        if (file_exists($img)) { ?>
+            <img class="profile-user-img img-responsive img-circle" src="<?=$row['ava'];?>" alt="<?=$row['name'];?>">
+        <?php
+        } else { ?>
+            <img class="profile-user-img img-responsive img-circle" src="http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image" alt="<?=$row['name'];?>">
+        <?php
+        }
+      ?>
         <h3 class="profile-username text-center"><?=$row['name'];?></h3>
         <p class="text-muted text-center"><?=$row['posada'];?></p>
 
@@ -66,7 +75,16 @@
           ?>
           <div class="post">
             <div class="user-block">
-              <img class="img-circle img-bordered-sm" src="<?=$row['ava'];?>" alt="<?=$row['name'];?>">
+            <?php
+              $img = $row['ava'];
+              if (file_exists($img)) { ?>
+                  <img class="img-circle img-bordered-sm" src="<?=$row['ava'];?>" alt="<?=$row['name'];?>">
+              <?php
+              } else { ?>
+                  <img class="img-circle img-bordered-sm" src="http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image" alt="<?=$row['name'];?>">
+              <?php
+              }
+            ?>
               <span class='username'>
                 <a href="friend?id=<?=$row['id'];?>"><?=$row['name'];?></a>
               </span>

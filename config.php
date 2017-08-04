@@ -12,10 +12,10 @@
 //                  НАСТРОЙКА ЗЄДНАННЯ З БД
 ///////////////////////////////////////////////////////////////
 	define('WS_DBPREFIX', 'bu_'); 
-	define('WS_DBSERVER', 'wstudi01.mysql.ukraine.com.ua'); 
-	define('WS_DBUSER', 'wstudi01_busn');     
-	define('WS_DBPASSWORD', '6sahjvsy');
-	define('WS_DATABASE', 'wstudi01_busn');
+	define('WS_DBSERVER', 'localhost'); 
+	define('WS_DBUSER', 'root');     
+	define('WS_DBPASSWORD', '');
+	define('WS_DATABASE', 'db_busn');
 
 /////////////////////////////////////////////////////////
 /*

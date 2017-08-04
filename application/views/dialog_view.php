@@ -6,7 +6,16 @@
               <!-- Profile Image -->
               <div class="box box-primary">
                 <div class="box-body box-profile">
-                  <img class="profile-user-img img-responsive img-circle" src="<?=$_SESSION['auchUsersSetings']['ava'];?>" alt="<?=$_SESSION['auchUsersSetings']['name'];?>">
+                  <?php
+                    $img = $_SESSION['auchUsersSetings']['ava'];
+                    if (file_exists($img)) { ?>
+                        <img class="profile-user-img img-responsive img-circle" src="<?=$_SESSION['auchUsersSetings']['ava'];?>" alt="<?=$_SESSION['auchUsersSetings']['name'];?>">
+                    <?php
+                    } else { ?>
+                        <img class="profile-user-img img-responsive img-circle" src="http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image" alt="<?=$_SESSION['auchUsersSetings']['name'];?>">
+                    <?php
+                    }
+                  ?>
                   <h3 class="profile-username text-center"><?=$_SESSION['auchUsersSetings']['name'];?></h3>
                   <p class="text-muted text-center"><?=$_SESSION['auchUsersSetings']['posada'];?></p>
 
@@ -82,7 +91,16 @@
                   <a href="friend?id=<?=$row['id_user_a'];?>"><span class="direct-chat-name <?=$pullName;?>"><?=$row['name'];?></span></a>
                   <span class="direct-chat-timestamp <?=$pullDate;?>"><?=$row['data'];?></span>
                 </div><!-- /.direct-chat-info -->
-                <a href="friend?id=<?=$row['id_user_a'];?>"><img class="direct-chat-img" src="<?=$row['ava'];?>" alt="<?=$row['name'];?>"></a><!-- /.direct-chat-img -->
+                <?php
+                  $img = $row['ava'];
+                  if (file_exists($img)) { ?>
+                      <a href="friend?id=<?=$row['id_user_a'];?>"><img class="direct-chat-img" src="<?=$row['ava'];?>" alt="<?=$row['name'];?>"></a><!-- /.direct-chat-img -->
+                  <?php
+                  } else { ?>
+                      <a href="friend?id=<?=$row['id_user_a'];?>"><img class="direct-chat-img" src="http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image" alt="<?=$row['name'];?>"></a><!-- /.direct-chat-img -->
+                  <?php
+                  }
+                ?>
                 <div class="direct-chat-text">
                   <?php
                     $phrases  = ['Хахаха', 'Хаха', 'Ха', 'Хуй', 'підар', 'Підар', 'Уйобок', 'козел', 'Козел', 'підарас', 'Підарас'];
